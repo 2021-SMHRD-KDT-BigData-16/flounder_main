@@ -78,15 +78,11 @@
 
     .table th,
     .table td {
-        border: none; /* 테이블 선 제거 */
+        border: 1px solid #dee2e6;
     }
 
     .table th {
         background-color: #f8f9fa;
-    }
-       .table-wrapper {
-        width: 30%;
-        margin: auto;
     }
 </style>
 </head>
@@ -125,40 +121,39 @@
 							<div class="row">
 								<div class="col-md-12">
 									<div class="card2">
-										<div style="width: 30%;">
-											<table class="table text-center">
-												<!-- Feed content here -->
-												<table class="table text-center">
-
-													<tr>
-														<td>내용</td>
-														<td class="content-text">${fn:replace(history_detail.dd_comment, newLineChar, "<br/>")}</td>
-														<!-- vo.content에서 \n를 찾아 <br>로 바꾼다. -->
-													</tr>
-													<tr>
-														<td>작성자</td>
-														<td>${history_detail.m_name}</td>
-													</tr>
-													<tr>
-														<td>작성일</td>
-														<td><fmt:formatDate value="${history_detail.dd_date}"
-																pattern="yyyy-MM-dd HH:mm:ss" /></td>
-													</tr>
-												</table>
-												</div>
-												<form id="frm" action="${cpath}/history" method="GET">
-													<button type="submit" data-btn="list"
-														class="btn btn-sm btn-primary">목록</button>
-													<c:if test="${mvo.m_email eq share_detail.w_email}">
-														<button data-btn="modify" class="btn btn-sm btn-primary">수정</button>
-														<button data-btn="remove" class="btn btn-sm btn-primary">삭제</button>
-													</c:if>
-													<c:if test="${!empty mvo}">
-														<button data-btn="reply" class="btn btn-sm btn-primary">답글</button>
-													</c:if>
-												</form>
+									  <div style="width: 30%;">
+        <table class="table text-center">
+										<!-- Feed content here -->
+										<table class="table text-center">
+											
+											<tr>
+												<td>내용</td>
+												<td class="content-text">${fn:replace(history_detail.dd_comment, newLineChar, "<br/>")}</td>
+												<!-- vo.content에서 \n를 찾아 <br>로 바꾼다. -->
+											</tr>
+											<tr>
+												<td>작성자</td>
+												<td>${history_detail.m_name}</td>
+											</tr>
+											<tr>
+												<td>작성일</td>
+												<td><fmt:formatDate value="${history_detail.dd_date}"
+														pattern="yyyy-MM-dd HH:mm:ss" /></td>
+											</tr>
+										</table>
+										 </div>
+										 <div>
+											<form id="frm" action="${cpath}/history" method="GET" style="display: inline;>
+									    <button type="submit" data-btn="list" class="btn btn-sm btn-primary">목록</button>
+											</form>
+											<span>&nbsp;</span> 				
+											<form id="frm" action="${cpath}/remove" method="POST" style="display: inline;">
+										    <input type="hidden" name="c_id" value="${share_detail.c_id}">
+										    <button type="submit" data-btn="remove" class="btn btn-sm btn-primary">삭제</button>
+										</form>
 										</div>
 									</div>
+								</div>
 							</div>
 							<br />
 

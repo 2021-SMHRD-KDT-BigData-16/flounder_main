@@ -72,13 +72,14 @@
 					<h4 class="card-title">게시글 작성</h4>
 					<form action="${cpath}/write" method="post" enctype="multipart/form-data">
 					
+						
+						<div class="form-group">
+							<label for="author">제목</label>
+							<input type="text" class="form-control" id="author" name="author" required>
+						</div>
 						<div class="form-group">
 							<label for="content">내용</label>
 							<textarea class="form-control" id="content" name="content" rows="5" required></textarea>
-						</div>
-						<div class="form-group">
-							<label for="author">작성자</label>
-							<input type="text" class="form-control" id="author" name="author" required>
 						</div>
 						<div class="form-group">
 							<label for="media">미디어 (이미지 또는 동영상)</label>
