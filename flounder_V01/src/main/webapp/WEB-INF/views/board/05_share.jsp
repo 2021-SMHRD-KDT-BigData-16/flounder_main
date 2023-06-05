@@ -90,6 +90,7 @@
                                  </a>
 
                                         </div>
+                                        <br/>
                                         <h5 class="card-text">작성자: ${vo.m_name}</h5>
                                         <p class="card-title">${vo.title}</p>
                                         <p class="card-text">

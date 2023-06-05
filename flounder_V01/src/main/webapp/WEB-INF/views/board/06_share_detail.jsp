@@ -1,5 +1,4 @@
-
-</html><%@ page language="java" contentType="text/html; charset=UTF-8"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
@@ -35,7 +34,15 @@
     background-color: #5AD5C8;
     color: #FFFFFF;
   }
-
+.btn-primary {
+	background-color: #5AD5C8;
+	border-color: #5AD5C8;
+	color: white;
+}
+ .btn-primary:hover {
+    background-color: transparent;
+    color: #5AD5C8;
+}
 
 </style>
 
@@ -78,12 +85,15 @@
 			<div class="col-lg-9">
 				<div class="center-card">
 					<div class="card"style="margin: 20px;">
-						<div class="card-body">
-							<h4 class="card-title">게시물 상세</h4>
-							<table class="table">
+						
+							<h4 class="card-title" style="display: flex; justify-content: center; align-items: center;">게시물 상세</h4>
 								<tr>
-									<td><img alt="이미지" height=400px src="${cpath}/resources${share_detail.img_path}"></td>
+								 <div style="display: flex; justify-content: center;">
+									<td><img alt="이미지" height=400px; width= 400px; src="${cpath}/resources${share_detail.img_path}"></td>
+									</div>
 								</tr>
+							<table class="table">
+								<br/>
 								<tr>
 									<td style="width: 100px">제목</td>
 									<td>${share_detail.title}</td>
@@ -106,10 +116,8 @@
 								<button data-btn="list" class="btn btn-primary btn-custom">목록</button>
 								<c:if test="${mvo.m_email eq share_detail.w_email}">
 									<button data-btn="modify" class="btn btn-primary btn-custom">수정</button>
-									<button data-btn="remove" class="btn btn-primary btn-custom border-primary">
-										<input type="hidden" value="${share_detail.c_id}">
-										삭제
-									</button>
+									<button data-btn="remove" class="btn btn-primary btn-custom ">
+										<input type="hidden" value="${share_detail.c_id}"> 삭제 </button>
 								</c:if>
 								<c:if test="${!empty mvo}">
 									<button data-btn="reply" class="btn btn-primary btn-custom">답글</button>
@@ -119,15 +127,13 @@
 							<form id="frm">
 								<input type="hidden" id="c_id" name="c_id" value="${share_detail.c_id}">
 							</form>
-						</div>
+						
 					</div>
 				</div>
 			</div>
 	
 			<div class="col-lg-3">
-				<div class="right-card">
 					<jsp:include page="97_right.jsp" />
-				</div>
 			</div>
 		</div>
 	</div>

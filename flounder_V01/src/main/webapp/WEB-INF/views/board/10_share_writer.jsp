@@ -85,7 +85,7 @@
 							<input type="file" class="form-control-file" id="media" name="media" accept="image/*,video/*" required>
 						</div>
 						<div class="d-flex justify-content-end">
-										<button data-btn="list" class="btn btn-sm btn-primary mr-2">목록</button>
+										<button data-btn="list" class="btn btn-sm btn-primary mr-2">취소</button>
 										<button type="submit" class="btn btn-sm btn-primary mr-2">제출</button>
 									</div>
 					</form>
