@@ -33,4 +33,6 @@ public interface BoardMapper {
 
 	public void modify(Community com);
 	
+	public void history_remove(int dd_id);
+	
 }

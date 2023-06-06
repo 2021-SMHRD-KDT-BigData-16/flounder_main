@@ -6,6 +6,11 @@
 <%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <c:set var="cpath" value="${pageContext.request.contextPath}" />
 
+
+
+
+
+
 <head>
 <title>08 history detail</title>
 <meta charset="utf-8">
@@ -96,15 +101,11 @@
 				formData.attr("action", "${cpath}/history");
 				formData.attr("method", "get");
 				// formData.find("#c_id").remove();
-			} else if (btn == "modify") {
-				formData.attr("action", "${cpath}/modify"); // ?num=${vo.num}
-				formData.attr("method", "get");
-			} else if (btn == "remove") {
+			}
+			else if (btn == "remove") 
+			{
 				//location.href="${cpath}/remove?num="+${vo.num};
-				formData.attr("action", "${cpath}/remove"); // ?num=${vo.num}
-				formData.attr("method", "get");
-			} else if (btn == "reply") {
-				formData.attr("action", "${cpath}/reply"); // ?num=${vo.num}
+				formData.attr("action", "${cpath}/history_remove"); // ?num=${vo.num}
 				formData.attr("method", "get");
 			}
 			formData.submit(); // 전송
@@ -177,7 +178,10 @@
 											<form id="frm" action="${cpath}/remove" method="POST" style="display: inline;">
 										    <input type="hidden" name="c_id" value="${share_detail.c_id}">
 										    <button type="submit" data-btn="remove" class="btn btn-sm btn-primary">삭제</button>
+										    <input type="hidden" id="dd_id" name="dd_id" value="${history_detail.dd_id}">
 										</form>
+									
+										
 										</div>
 									</div>
 								</div>

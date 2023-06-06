@@ -25,6 +25,13 @@
     		
 	</select>
 	
+	
+	<delete id="history_remove" parameterType = "int">
+		delete from detect_dis where dd_id = #{dd_id}	
+	</delete>
+		
+	
+	
 	<select id="getSearch" resultType = "kr.kvgs.entity.Dis_search"
 	                        parameterType="String">
 		select * from dis_search where ds_name like CONCAT('%', #{str_search}, '%') order by ds_name
