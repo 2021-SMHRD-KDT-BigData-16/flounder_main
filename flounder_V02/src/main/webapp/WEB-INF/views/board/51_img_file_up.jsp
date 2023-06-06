@@ -52,7 +52,8 @@ pageEncoding="UTF-8"%>
           
             <h4> image upload return json </h4> 
 	          <div class="row justify-content-center">
-	             <form action="http://121.179.7.40:5000/process_image" method="post" enctype="multipart/form-data">
+<!--               <form action="http://121.179.7.40:5000/process_image" method="post" enctype="multipart/form-data">  -->	
+	             <form action="http://121.179.83.133:5000/process_image" method="post" enctype="multipart/form-data">
 	                 <div class="form-group">
 	                   <label>내용:</label>
 	                   <input type="text" name="title" />
@@ -80,7 +81,8 @@ pageEncoding="UTF-8"%>
           
             <h4> image upload return image </h4> 
 	          <div class="row justify-content-center">
-	             <form action="http://121.179.7.40:5000/return_image" method="post" enctype="multipart/form-data">
+<!-- 	             <form action="http://121.179.7.40:5000/return_image" method="post" enctype="multipart/form-data">    -->
+	             <form action="http://121.179.83.133:5000/return_image" method="post" enctype="multipart/form-data">
 	                 <div class="form-group">
 	                   <label>내용:</label>
 	                   <input type="text" name="title" />
