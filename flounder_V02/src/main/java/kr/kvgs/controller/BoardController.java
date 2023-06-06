@@ -136,13 +136,26 @@ public class BoardController {
 	}
 	
 	@PostMapping("/modify")
-	public String modify(Community com, RedirectAttributes rttr) { // num, title, content
+	public String modify(Community com, RedirectAttributes rttr, MultipartFile file, HttpServletRequest request, Model model) { // num, title, content
+		
+		String fileName = file.getOriginalFilename(); 
+        long fileSize = file.getSize();
+        
+        String imagePath = request.getServletContext().getRealPath("/");
+		String fileExt = fileName.substring(fileName.lastIndexOf("."), fileName.length());
+		
+		UUID uuid = UUID.randomUUID();
+		String uniqueName = uuid.toString();
+		
+        String fileFullPath = imagePath + "resources\\DATA\\Share_Img\\" + uniqueName + fileExt;
+        String fileSaveDB = "/DATA/Share_Img/" + uniqueName + fileExt;
+		
 		
 		// Model --> request 경량화 버전으로 forward방식 사용해서 페이지 이동할 때 jsp에 값을 담아서 보내주는 거 --> el표현식 사용해서 데이터 꺼내기
 		// RedirectAttributes --> redirect방식으로 페이지 이동할 때 redirect 이동 url에 데이터를 잠깐 보내줘야 할 때 사용하는 객체
-		
 		mapper.modify(com); // --> update구문을 실행하면 return type은 무조건 int!!!!!!!
 		rttr.addAttribute("c_id", com.getC_id()); // --> select할 때 c_id가 필요하니까 rttr에 c_id만 담아서 보내주기
+		
 		return "redirect:/share_detail"; // --> 다시 select 해주는 건 share_detail
 	}
 	

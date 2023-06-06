@@ -67,6 +67,7 @@
 							<div class="card-body" style="margin: 20px;">
 								<h4 class="card-title" style="text-align: center;">게시판 수정</h4>
 
+
 								<form id="frm" action="${cpath}/modify" method="post"
 									enctype="multipart/form-data">
 									<div class="form-group">
@@ -94,6 +95,8 @@
 										</button>
 									</div>
 								</form>
+								
+								
 							</div>
 						</div>
 					</div>

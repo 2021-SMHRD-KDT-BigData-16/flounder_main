@@ -12,4 +12,5 @@ public class Community {
 	private String 	img_path;
 	private String 	c_text;
 	private String 	w_email;
+	
 }

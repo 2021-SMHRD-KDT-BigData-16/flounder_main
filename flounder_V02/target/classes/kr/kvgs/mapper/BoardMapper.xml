@@ -67,7 +67,7 @@
 	</delete>
 	
 	<update id="modify" parameterType="kr.kvgs.entity.Community">
-		update community set title= #{title}, c_text= #{c_text}
+		update community set title= #{title}, c_text= #{c_text}, img_path = #{img_path}
 	  where c_id = #{c_id} 
 	</update>
 
