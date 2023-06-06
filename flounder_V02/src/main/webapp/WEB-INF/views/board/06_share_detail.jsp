@@ -30,10 +30,7 @@
 		padding: 30px;
 		border: 1px solid #5AD5C8;
 	}
-	.btn-custom {
-    background-color: #5AD5C8;
-    color: #FFFFFF;
-  }
+	
 .btn-primary {
 	background-color: #5AD5C8;
 	border-color: #5AD5C8;
@@ -116,7 +113,7 @@
 							</table>
 
 							<div class="text-center mt-4">
-								<button data-btn="list" class="btn btn-primary btn-custom">목록</button>
+								<button data-btn="list" class="btn btn-sm btn-primary">목록</button>
 								<!-- 로그인한 아이디와 게시물의 아이디가 같을경우 --> 
 								<c:if test="${mvo.m_email eq share_detail.w_email}">
 									<button data-btn="modify" class="btn btn-sm btn-primary">
@@ -129,7 +126,7 @@
 									</button>
 								</c:if> 
 								<c:if test="${!empty mvo}">
-									<button data-btn="reply" class="btn btn-primary btn-custom">답글</button>
+									<button data-btn="reply" class="btn btn-sm btn-primary">답글</button>
 								</c:if>
 							</div>
 
