@@ -111,19 +111,30 @@ pageEncoding="UTF-8"%>
   </thead>
                   
                  <tbody>
-  <c:forEach var="vo" items="${list_search}">
+<c:choose>
+  <c:when test="${empty list_search}">
+    <!-- 검색 결과가 없을 때 -->
     <tr>
-      <td style="vertical-align: middle;">${vo.ds_name}</td>
-      <td style="vertical-align: middle;">${vo.ds_simple}</td>
-      <td style="vertical-align: middle;">${vo.ds_cause}</td>
-      <form action="${cpath}/search_detail" method="post" class="form-inline my-2 my-lg-0" style="position: absolute; right: 0; margin-right : 20px;">
-        <input type="hidden" name="ds_id" value="${vo.ds_id}">
-        <td style="padding: 5px; vertical-align: middle;">
-          <button type="submit" class="btn-submit">상세보기</button>
-        </td>
-      </form>
+      <td colspan="4" style="text-align: center;">검색 결과가 없습니다.</td>
     </tr>
-  </c:forEach>
+  </c:when>
+  <c:otherwise>
+    <!-- 검색 결과가 있거나 전체 데이터를 표시할 때 -->
+    <c:forEach var="vo" items="${list_search}">
+      <tr>
+        <td style="vertical-align: middle;">${vo.ds_name}</td>
+        <td style="vertical-align: middle;">${vo.ds_simple}</td>
+        <td style="vertical-align: middle;">${vo.ds_cause}</td>
+        <form action="${cpath}/search_detail" method="post" class="form-inline my-2 my-lg-0" style="position: absolute; right: 0; margin-right: 20px;">
+          <input type="hidden" name="ds_id" value="${vo.ds_id}">
+          <td style="padding: 5px; vertical-align: middle;">
+            <button type="submit" class="btn-submit">상세보기</button>
+          </td>
+        </form>
+      </tr>
+    </c:forEach>
+  </c:otherwise>
+</c:choose>
 </tbody>								
                 </table>
           				
