@@ -83,11 +83,11 @@
 
     .table th,
     .table td {
-        border: 1px solid #dee2e6;
+        border: 1px solid #5AD5C8;
     }
 
     .table th {
-        background-color: #f8f9fa;
+        background-color: #5AD5C8;
     }
 </style>
 <script type="text/javascript">
