@@ -85,6 +85,32 @@
         background-color: #f8f9fa;
     }
 </style>
+<script type="text/javascript">
+	$(document).ready(function() {
+		// 4개의 버튼을 클릭하면 처리하는 부분
+		$("button").on("click", function(e) {
+			var btn = $(this).data("btn"); // data() = data-에 있는 이름
+			var formData = $("#frm");
+			if (btn == "list") {
+				//location.href="${cpath}/list";
+				formData.attr("action", "${cpath}/history");
+				formData.attr("method", "get");
+				// formData.find("#c_id").remove();
+			} else if (btn == "modify") {
+				formData.attr("action", "${cpath}/modify"); // ?num=${vo.num}
+				formData.attr("method", "get");
+			} else if (btn == "remove") {
+				//location.href="${cpath}/remove?num="+${vo.num};
+				formData.attr("action", "${cpath}/remove"); // ?num=${vo.num}
+				formData.attr("method", "get");
+			} else if (btn == "reply") {
+				formData.attr("action", "${cpath}/reply"); // ?num=${vo.num}
+				formData.attr("method", "get");
+			}
+			formData.submit(); // 전송
+		})
+	});
+</script>
 </head>
 
 <body>
@@ -142,9 +168,10 @@
 											</tr>
 										</table>
 										 </div>
-										 <div>
-											<form id="frm" action="${cpath}/history" method="GET" style="display: inline;>
-									    <button type="submit" data-btn="list" class="btn btn-sm btn-primary">목록</button>
+										 <div class="text-center mt-4">
+											<!--  <form id="frm" action="${cpath}/history" method="GET" style="display: inline;>-->
+									   <button data-btn="list" class="btn btn-sm btn-primary">목록</button>
+								
 											</form>
 											<span>&nbsp;</span> 				
 											<form id="frm" action="${cpath}/remove" method="POST" style="display: inline;">
