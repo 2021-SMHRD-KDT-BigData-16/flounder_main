@@ -121,6 +121,7 @@ public class BoardController {
 		mapper.remove(c_id);
 		return "redirect:/community"; //
 	}
+	
 
 	@GetMapping("/modify")
 	public String modify(int c_id, Model model) {
@@ -135,8 +136,10 @@ public class BoardController {
 		return "board/11_modify";
 	}
 	
+	
 	@PostMapping("/modify")
-	public String modify(Community com, RedirectAttributes rttr, MultipartFile file, HttpServletRequest request, Model model) { // num, title, content
+	public String modify(int c_id,  Model model, MultipartFile file, HttpServletRequest request, RedirectAttributes rttr, Community com ) { // num, title, content
+		logger.info("**** BoardController modify *** {} ", file.getOriginalFilename());
 		
 		String fileName = file.getOriginalFilename(); 
         long fileSize = file.getSize();
@@ -150,7 +153,27 @@ public class BoardController {
         String fileFullPath = imagePath + "resources\\DATA\\Share_Img\\" + uniqueName + fileExt;
         String fileSaveDB = "/DATA/Share_Img/" + uniqueName + fileExt;
 		
-		
+        File UploadFolder = new File(imagePath);
+        
+        logger.info("#############title, c_text################ : {}, {}", com.getTitle(), com.getC_text());
+        
+        try{
+    		if( !UploadFolder.exists() ) {
+    			logger.info("BoardController getFile imagePath : {} not exist", imagePath);
+    			UploadFolder.mkdir();
+    		}
+        
+			logger.info("BoardController getFile FullPath : {}, FileSize : {}", fileFullPath, fileSize);
+	        File destination = new File(fileFullPath);
+	        file.transferTo(destination);
+        }catch (Exception e){
+        	logger.info("에러 : " + e.getMessage());
+        }finally {
+        	
+        }
+
+        com.setImg_path(fileSaveDB); 
+        
 		// Model --> request 경량화 버전으로 forward방식 사용해서 페이지 이동할 때 jsp에 값을 담아서 보내주는 거 --> el표현식 사용해서 데이터 꺼내기
 		// RedirectAttributes --> redirect방식으로 페이지 이동할 때 redirect 이동 url에 데이터를 잠깐 보내줘야 할 때 사용하는 객체
 		mapper.modify(com); // --> update구문을 실행하면 return type은 무조건 int!!!!!!!

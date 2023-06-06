@@ -31,7 +31,7 @@ public interface BoardMapper {
 	
 	public Community get(int c_id);
 
-	public void modify(Community com);
+	public int modify(Community com);
 	
 	public void history_remove(int dd_id);
 	
