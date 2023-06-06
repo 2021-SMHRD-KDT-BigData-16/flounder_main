@@ -12,10 +12,11 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-
 
 import kr.kvgs.entity.Community;
 import kr.kvgs.entity.DetectDis;
@@ -80,7 +81,7 @@ public class BoardController {
 	}
 	
 	@RequestMapping("/share_detail")
-	public String share_detail(int c_id, Model model, HttpSession session) {
+	public String share_detail(int c_id, Model model) {
 				
 		logger.info("***** BoardController shareDetail *****{}", c_id);
 		
@@ -90,13 +91,13 @@ public class BoardController {
 		
 		model.addAttribute("share_detail", sd_one);
 		
+		logger.info("***** pppppppppppppppppppppppp *****{}", sd_one.getC_id());
+		
 		return "board/06_share_detail";
 	}
 	
-
-	
 	@RequestMapping("/history_detail")
-	public String history_detail(int dd_id, Model model, HttpSession session) {
+	public String history_detail(int dd_id, Model model) {
 				
 		logger.info("***** BoardController shareDetail *****{}", dd_id);
 		
@@ -107,8 +108,6 @@ public class BoardController {
 		
 		return "board/08_history_detail";
 	}
-
-	
 	
 	@RequestMapping("/remove")
 	public String remove(int c_id) { // ?num=n
@@ -116,6 +115,31 @@ public class BoardController {
 		return "redirect:/community"; //
 	}
 
+	@GetMapping("/modify")
+	public String modify(int c_id, Model model) {
+				
+		Community mo = mapper.get(c_id);
+		
+		System.out.println("확인1 >> "+c_id);
+		System.out.println("확인2 >> "+mo);
+		
+		model.addAttribute("mo", mo);
+		
+		return "board/11_modify";
+	}
+	
+	@PostMapping("/modify")
+	public String modify(Community com, RedirectAttributes rttr) { // num, title, content
+		
+		// Model --> request 경량화 버전으로 forward방식 사용해서 페이지 이동할 때 jsp에 값을 담아서 보내주는 거 --> el표현식 사용해서 데이터 꺼내기
+		// RedirectAttributes --> redirect방식으로 페이지 이동할 때 redirect 이동 url에 데이터를 잠깐 보내줘야 할 때 사용하는 객체
+		
+		mapper.modify(com); // --> update구문을 실행하면 return type은 무조건 int!!!!!!!
+		rttr.addAttribute("c_id", com.getC_id()); // --> select할 때 c_id가 필요하니까 rttr에 c_id만 담아서 보내주기
+		return "redirect:/share_detail"; // --> 다시 select 해주는 건 share_detail
+	}
+	
+	
     // 파일전송 요청을 처리하기 위한 컨트롤러
     @RequestMapping("/dd_register")	
     public String dd_register(DetectDis vo, MultipartFile file, HttpServletRequest request, Model model){

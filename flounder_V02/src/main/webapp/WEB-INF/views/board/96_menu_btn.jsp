@@ -20,17 +20,15 @@
     transition: opacity 0.3s;
     
   }
-
-
 </style>
 
 
 
 <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #5AD5C8;">
   <a class="navbar-brand" href="#" onClick="location.href='./02'">Home</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+  <a class="navbar-toggler" type="a" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
-  </button>
+  </a>
   <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
     <ul class="navbar-nav">
     	<c:if test="${!empty mvo}">
@@ -51,25 +49,19 @@
    
   </div>
   
- <form class="form-inline my-2 my-lg-0">
+ <div class="form-inline my-2 my-lg-0">
     <c:choose>
         <c:when test="${!empty mvo}">
-            <button class="btn btn-outline-light my-2 my-sm-0 mr-2" onMouseOver="showKoreanText(this, '로그아웃')" onMouseOut="showKoreanText(this, 'Logout')" type="button" onClick="location.href='${cpath}/logout'">Logout</button>
+            <a class="btn btn-outline-light my-2 my-sm-0 mr-2" onMouseOver="showKoreanText(this, '로그아웃')" onMouseOut="showKoreanText(this, 'Logout')" type="a" onClick="location.href='${cpath}/logout'">Logout</a>
         </c:when>
         <c:otherwise>
-            <button class="btn btn-outline-light my-2 my-sm-0 mr-2" onMouseOver="showKoreanText(this, '로그인')" onMouseOut="showKoreanText(this, 'Login')" type="button" onClick="location.href='${cpath}/login'">Login</button>
+            <a class="btn btn-outline-light my-2 my-sm-0 mr-2" onMouseOver="showKoreanText(this, '로그인')" onMouseOut="showKoreanText(this, 'Login')" type="a" onClick="location.href='${cpath}/login'">Login</a>
         </c:otherwise>
     </c:choose>
-       </ul>
-    <form class="form-inline my-2 my-lg-0" style="position: absolute; right: 20px;">
-      <button class="btn btn-outline-light my-2 my-sm-0" type="button" data-toggle="collapse" data-target="#menuCollapse" aria-controls="menuCollapse" aria-expanded="false">
-        <span class="navbar-toggler-icon"></span> 
-      </button>
-    </form>
-  <!--   <button class="btn btn-outline-light my-2 my-sm-0" type="button" data-toggle="collapse" data-target="#menuCollapse" aria-controls="menuCollapse" aria-expanded="false">
+    <a class="btn btn-outline-light my-2 my-sm-0" type="a" data-toggle="collapse" data-target="#menuCollapse" aria-controls="menuCollapse" aria-expanded="false">
         <span class="navbar-toggler-icon"></span>
-    </button> -->
-</form>
+    </a>
+</div>
 
 
 </nav>
@@ -79,6 +71,10 @@
     element.textContent = text;
   }
 </script>
-  
+    </ul>
+    <div class="form-inline my-2 my-lg-0" style="position: absolute; right: 20px;">
+      <a class="btn btn-outline-light my-2 my-sm-0" type="a" data-toggle="collapse" data-target="#menuCollapse" aria-controls="menuCollapse" aria-expanded="false">
+        <span class="navbar-toggler-icon"></span>
+      </a>
+    </div>
 
-</html>

@@ -58,7 +58,15 @@
 	<delete id="remove" parameterType="int">
 		delete from community where c_id = #{c_id}
 	</delete>
+	
+	<update id="modify" parameterType="kr.kvgs.entity.Community">
+		update community set title= #{title}, c_text= #{c_text}
+	  where c_id = #{c_id} 
+	</update>
 
+	<select id="get" resultType="kr.kvgs.entity.Community" parameterType="int">
+	select * from community where c_id=#{c_id}
+	</select>
 
 
 

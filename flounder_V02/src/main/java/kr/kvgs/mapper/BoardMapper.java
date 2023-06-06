@@ -29,4 +29,8 @@ public interface BoardMapper {
 
 	public void remove(int c_id);
 	
+	public Community get(int c_id);
+
+	public void modify(Community com);
+	
 }

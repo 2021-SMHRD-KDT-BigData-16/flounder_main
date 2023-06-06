@@ -101,6 +101,9 @@
 								<tr>
 									<td>내용</td>
 									<td>${fn:replace(share_detail.c_text, newLineChar, "<br/>")}</td>
+								<!-- vo.content에서 \n를 찾아 <br>로 바꾼다.라는 뜻 -->
+								<!-- 그런데 \는 특수한 기호이므로 표현식에는 쓸 수 없다. -->
+								<!-- 따라서 \n을 다른 변수에 바인딩 시켜서 그 바인딩 한것을 써줘야 한다. -->
 								</tr>
 								<tr>
 									<td>작성자</td>
@@ -114,11 +117,17 @@
 
 							<div class="text-center mt-4">
 								<button data-btn="list" class="btn btn-primary btn-custom">목록</button>
+								<!-- 로그인한 아이디와 게시물의 아이디가 같을경우 --> 
 								<c:if test="${mvo.m_email eq share_detail.w_email}">
-									<button data-btn="modify" class="btn btn-primary btn-custom">수정</button>
-									<button data-btn="remove" class="btn btn-primary btn-custom ">
-										<input type="hidden" value="${share_detail.c_id}"> 삭제 </button>
-								</c:if>
+									<button data-btn="modify" class="btn btn-sm btn-primary">
+										<input type="hidden" value="${share_detail.c_id}">
+										수정
+									</button>
+									<button data-btn="remove" class="btn btn-sm btn-primary">
+										<input type="hidden" value="${share_detail.c_id}">
+										삭제
+									</button>
+								</c:if> 
 								<c:if test="${!empty mvo}">
 									<button data-btn="reply" class="btn btn-primary btn-custom">답글</button>
 								</c:if>
