@@ -118,7 +118,8 @@ pageEncoding="UTF-8"%>
           <br />
             <div class="inner-box">
              <h5 class="header" style="text-align: center; margin-bottom: 20px;"><strong>질병검사</strong></h5>
-            
+
+<!--             
               <div class="form-group1">
                 <br />
                 <label>검사가 필요한 광어 사진:</label>
@@ -139,6 +140,34 @@ pageEncoding="UTF-8"%>
                 <button type="submit" class="btn btn-sm btn-primary mr-2">등록 하기</button>
               </div>
             </div>
+ -->            
+            
+              <div class="row justify-content-center">
+                 <form action="${cpath}/dd_register" method="post" enctype="multipart/form-data">
+                     <input type="hidden" name="dd_email" value="${mvo.m_email}"/>
+                     <div class="form-group">
+                       <label>내용:</label>
+                       <textarea rows="3" name="dd_comment" id="content" class="form-control"></textarea>
+                     </div>
+                     <div class="form-group">
+                       <label>업로드 이미지:</label>
+                       <input type="file" name="file" id="file" accept="image/*" onchange="readImage(this);" />
+                       <img id = "preview_img" height = 200px/>
+                     </div>
+                   
+                     <button type="submit" class="btn btn-sm btn-primary" style="width: 45%; font-size: 0.8em;">등록</button>
+                     <button type="reset" class="btn btn-sm btn-primary" style="width: 45%; font-size: 0.8em;">취소</button>
+                 </form>
+              </div>
+                      
+            
+
+            
+            
+            
+            
+            
+            
           </div>
           <a class="nav-link" href="#" onClick="location.href='./51'">파이썬 플라스크 연동 테스트</a>
           <br />
