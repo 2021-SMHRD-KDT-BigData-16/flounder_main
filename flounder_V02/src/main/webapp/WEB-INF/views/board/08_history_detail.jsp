@@ -77,18 +77,13 @@
 	background-color: transparent;
 	color: #5AD5C8;
 }
-  .table {
-        border-collapse: collapse;
-    }
 
-    .table th,
-    .table td {
-        border: 1px solid #5AD5C8;
-    }
-
-    .table th {
-        background-color: #5AD5C8;
-    }
+.table_content {
+	border-collapse: collapse;
+	width: 100%;
+	border: 1px solid #5AD5C8;
+}
+}
 </style>
 <script type="text/javascript">
 	$(document).ready(function() {
@@ -101,9 +96,7 @@
 				formData.attr("action", "${cpath}/history");
 				formData.attr("method", "get");
 				// formData.find("#c_id").remove();
-			}
-			else if (btn == "remove") 
-			{
+			} else if (btn == "remove") {
 				//location.href="${cpath}/remove?num="+${vo.num};
 				formData.attr("action", "${cpath}/history_remove"); // ?num=${vo.num}
 				formData.attr("method", "get");
@@ -148,59 +141,55 @@
 							<div class="row">
 								<div class="col-md-12">
 									<div class="card2">
-									  <div style="width: 30%;">
-        <table class="table text-center"  >
-										<!-- Feed content here -->
-										<table class="table text-center"  >
-											
+										<div style="width: 30%;">
+										<table class="table_content">
+											<!-- Feed content here -->
 											<tr>
-											
-												<td>내용</td>
-												<td>${fn:replace(history_detail.dd_comment, newLineChar, "<br/>")}</td>
-												<!-- vo.content에서 \n를 찾아 <br>로 바꾼다. -->
+											  <td>${history_detail.m_name}</td>
 											</tr>
 											<tr>
-												<td>작성자</td>
-												<td>${history_detail.m_name}</td>
+											  <td>${fn:replace(history_detail.dd_comment, newLineChar, "<br/>")}</td>
+											  <!-- vo.content에서 \n을 찾아 <br>로 대체합니다. -->
 											</tr>
 											<tr>
-												<td>작성일</td>
-												<td><fmt:formatDate value="${history_detail.dd_date}"
-														pattern="yyyy-MM-dd HH:mm:ss" /></td>
+											  <td><fmt:formatDate value="${history_detail.dd_date}" pattern="yyyy-MM-dd HH:mm:ss" /></td>
 											</tr>
-										</table>
-										 </div>
-										 <div class="text-center mt-4">
-											<!--  <form id="frm" action="${cpath}/history" method="GET" style="display: inline;>-->
-									   <button data-btn="list" class="btn btn-sm btn-primary">목록</button>
-								
-											</form>
-											<span>&nbsp;</span> 				
-											<form id="frm" action="${cpath}/remove" method="POST" style="display: inline;">
-										    <input type="hidden" name="c_id" value="${share_detail.c_id}">
-										    <button type="submit" data-btn="remove" class="btn btn-sm btn-primary">삭제</button>
-										    <input type="hidden" id="dd_id" name="dd_id" value="${history_detail.dd_id}">
-										</form>
-									
-										
-										</div>
-									</div>
-								</div>
+											</table>
 							</div>
-							<br />
+												<div class="text-center mt-4">
+													<!--  <form id="frm" action="${cpath}/history" method="GET" style="display: inline;>-->
+													<button data-btn="list" class="btn btn-sm btn-primary">목록</button>
 
-						</div>
-						<br />
-					</div>
-				</div>
-			</div>
+													</form>
+													<span>&nbsp;</span>
+													<form id="frm" action="${cpath}/remove" method="POST"
+														style="display: inline;">
+														<input type="hidden" name="c_id"
+															value="${share_detail.c_id}">
+														<button type="submit" data-btn="remove"
+															class="btn btn-sm btn-primary">삭제</button>
+														<input type="hidden" id="dd_id" name="dd_id"
+															value="${history_detail.dd_id}">
+													</form>
 
-			<div class="col-lg-3">
-				<jsp:include page="97_right.jsp" />
-			</div>
-		</div>
-	</div>
 
+												</div>
+												</div>
+												</div>
+												</div>
+												<br />
+
+												</div>
+												<br />
+												</div>
+												</div>
+												</div>
+
+												<div class="col-lg-3">
+													<jsp:include page="97_right.jsp" />
+												</div>
+												</div>
+												</div>
 </body>
 
 </html>
