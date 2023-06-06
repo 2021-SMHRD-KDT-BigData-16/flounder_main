@@ -32,10 +32,12 @@
 	border-color: #5AD5C8;
 	color: white;
 }
- .btn-primary:hover {
-    background-color: transparent;
-    color: #5AD5C8;
+
+.btn-primary:hover {
+	background-color: transparent;
+	color: #5AD5C8;
 }
+
 .left-section {
 	display: flex;
 	flex-wrap: wrap;
@@ -74,54 +76,58 @@
 
 </head>
 <body>
-    <jsp:include page="96_menu_btn.jsp" />
-    <div class="card-body">
-        <div style="min-height: 200px;">
-            <div class="row">
-                <div class="col-lg-9">
-                    <div class="feed-box">
-                        <div style="padding: 20px;" class="d-flex flex-column align-items-center">
-                            <c:forEach var="vo" items="${list_comm}">
-                                <div class="col-5 mb-4">
-                                    <div class="card" style="padding: 20px;">
-                                        <div class="card-img-container" style="width: 490px; height: 300px; overflow: hidden;">
-                                            <a class="move" href="${vo.c_id}">
-                                    <img src="${cpath}/resources${vo.img_path}" class="card-img-top" alt="이미지" style="width: 100%; height: 100%; object-fit: cover;">
-                                 </a>
+	<jsp:include page="96_menu_btn.jsp" />
+	<div class="card-body">
+		<div style="min-height: 200px;">
+			<div class="row">
+				<div class="col-lg-9">
+					<div class="feed-box">
+						<div style="padding: 20px;"
+							class="d-flex flex-column align-items-center">
+							<c:forEach var="vo" items="${list_comm}">
+								<div class="col-5 mb-4">
+									<div class="card" style="padding: 20px;">
+										<div class="card-img-container"
+											style="width: 490px; height: 300px; overflow: hidden;">
+											<a class="move" href="${vo.c_id}"> <img
+												src="${cpath}/resources${vo.img_path}" class="card-img-top"
+												alt="이미지"
+												style="width: 100%; height: 100%; object-fit: cover;">
+											</a>
 
-                                        </div>
-                                        <br/>
-                                        <h5 class="card-text">작성자: ${vo.m_name}</h5>
-                                        <p class="card-title">${vo.title}</p>
-                                        <p class="card-text">
-                                            <small class="text-muted"><fmt:formatDate value="${vo.c_date}" pattern="yyyy-MM-dd HH:mm:ss" /></small>
-                                        </p>
-                                    </div>
-                                </div>
-                            </c:forEach>
-                            
-                             <form id="pageForm">
-                     </form>
-                            
-                            
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3">
-                    <jsp:include page="97_right.jsp" />
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="container-fluid fixed-bottom mb-4">
-        <div class="row justify-content-end">
-            <div class="col-lg-9">
-                <div class="text-center">
-                    <a href="${cpath}/writer" class="btn btn-sm btn-primary mr-2">글쓰기</a>
-                </div>
-            </div>
-        </div>
-    </div>
+										</div>
+										<br />
+										<h5 class="card-text">작성자: ${vo.m_name}</h5>
+										<p class="card-title">${vo.title}</p>
+										<p class="card-text">
+											<small class="text-muted"><fmt:formatDate
+													value="${vo.c_date}" pattern="yyyy-MM-dd HH:mm:ss" /></small>
+										</p>
+									</div>
+								</div>
+							</c:forEach>
+
+							<form id="pageForm"></form>
+
+
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3">
+					<jsp:include page="97_right.jsp" />
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container-fluid fixed-bottom mb-4">
+		<div class="row justify-content-end">
+			<div class="col-lg-9">
+				<div class="text-center">
+					<a href="${cpath}/writer" class="btn btn-sm btn-primary mr-2">글쓰기</a>
+				</div>
+			</div>
+		</div>
+	</div>
 </body>
 
 
