@@ -139,7 +139,7 @@
 								<div class="col-md-12">
 									<div class="card2">
 									  <div style="width: 30%;">
-        <table class="table_contents"  >
+        <table class="table_contents">
 										<!-- Feed content here -->
 											<tr>
 												<td>내용</td>

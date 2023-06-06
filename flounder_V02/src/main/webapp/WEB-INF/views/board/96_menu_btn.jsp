@@ -3,7 +3,7 @@
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <c:set var="cpath" value="${pageContext.request.contextPath}" />
-
+<link href="https://fonts.googleapis.com/css2?family=Dongle&display=swap" rel="stylesheet">
 <style>
   .nav-item:hover .nav-link::after {
     content: attr(data-korean-name); /* Show Korean translation as pseudo-element content */
@@ -15,7 +15,7 @@
     color: white;
     padding: 5px;
     border-radius: 3px;
-    font-size: 12px;
+    font-size: 30px;
     opacity: 0;
     transition: opacity 0.3s;
     
@@ -24,8 +24,10 @@
 
 
 
-<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #5AD5C8;">
-  <a class="navbar-brand" href="#" onClick="location.href='./02'">Home</a>
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #5AD5C8; font-size: 20px; , sans-serif;">
+<a class="navbar-brand" href="#" onClick="location.href='./02'">
+  <img src="./resources/images/광어아이콘.png" height=60px; alt="홈" />
+</a>
   <a class="navbar-toggler" type="a" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </a>
