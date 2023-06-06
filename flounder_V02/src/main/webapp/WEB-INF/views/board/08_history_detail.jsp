@@ -149,13 +149,14 @@
 								<div class="col-md-12">
 									<div class="card2">
 									  <div style="width: 30%;">
-        <table class="table text-center">
+        <table class="table text-center"  >
 										<!-- Feed content here -->
-										<table class="table text-center">
+										<table class="table text-center"  >
 											
 											<tr>
+											
 												<td>내용</td>
-												<td class="content-text">${fn:replace(history_detail.dd_comment, newLineChar, "<br/>")}</td>
+												<td>${fn:replace(history_detail.dd_comment, newLineChar, "<br/>")}</td>
 												<!-- vo.content에서 \n를 찾아 <br>로 바꾼다. -->
 											</tr>
 											<tr>
