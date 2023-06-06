@@ -138,7 +138,7 @@ public class BoardController {
 	
 	
 	@PostMapping("/modify")
-	public String modify(int c_id,  Model model, MultipartFile file, HttpServletRequest request, RedirectAttributes rttr, Community com ) { // num, title, content
+	public String modify(Community com, RedirectAttributes rttr, MultipartFile file, HttpServletRequest request  ) { // num, title, content
 		logger.info("**** BoardController modify *** {} ", file.getOriginalFilename());
 		
 		String fileName = file.getOriginalFilename(); 
