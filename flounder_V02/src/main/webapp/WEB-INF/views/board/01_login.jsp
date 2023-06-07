@@ -141,12 +141,16 @@ pageEncoding="UTF-8"%>
   <div class="container" style="padding: 50px; border-radius: 5px;">
     <div class="row justify-content-center">
       <div class="col-md-6">
+     
         <div class="card" style="height: 40%; margin-top: 30%;">
+         <br/>
           <div class="card-body">
           	<div class="logo-container">
-  						<img src="./resources/images/아이콘.png" alt="Logo">
+          	
+  						<img src="./resources/images/아이콘4.png" alt="Logo">
 								</div>
-            
+            <br/>
+            <br/>
           <!-- <p class="card-text">회원님, 환영합니다.</p> -->  
             <form action="${cpath}/login" method="post">
               <div class="form-group">

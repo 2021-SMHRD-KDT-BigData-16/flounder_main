@@ -34,7 +34,7 @@
 }
 
 .card-body {
-	padding: 30px;
+	padding: 10px;
 }
 
 .btn-custom {
@@ -114,9 +114,13 @@
 									enctype="multipart/form-data">
 									<div class="form-group">
 										<div class="form-group">
-										<label>업로드 이미지:</label> <input type="file" name="file"
-											id="file" accept="image/*" onchange="readImage(this);" /> <img
-											id="preview_img" height=200px />
+										<label>업로드 이미지:</label> 
+										<br/>
+										<br/>
+										
+										<input type="file" name="file"
+											id="file" accept="image/*" onchange="readImage(this);" /><br/>
+											<br/> <img id="preview_img" height=200px />
 									</div>
 									</div>
 									<div class="form-group">
@@ -125,7 +129,7 @@
 									</div>
 									<div class="form-group">
 										<label>내용:</label>
-										<textarea rows="10" name="c_text" class="form-control">${mo.c_text}</textarea>
+										<textarea rows="5" name="c_text" class="form-control">${mo.c_text}</textarea>
 									</div>
 
 									<div class="form-group text-center">

@@ -84,8 +84,10 @@
 					<div class="card"style="margin: 20px;">
 						
 							<h4 class="card-title" style="display: flex; justify-content: center; align-items: center;">게시물 상세</h4>
+							<br/>
 								<tr>
 								 <div style="display: flex; justify-content: center;">
+								 
 									<td><img alt="이미지" height=400px; width= 400px; src="${cpath}/resources${share_detail.img_path}"></td>
 									</div>
 								</tr>

@@ -26,7 +26,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #5AD5C8; font-size: 20px; , sans-serif;">
 <a class="navbar-brand" href="#" onClick="location.href='./02'">
-  <img src="./resources/images/광어아이콘.png" height=60px; alt="홈" />
+  <img src="./resources/images/아이콘4.png" height=60px; alt="홈" />
 </a>
   <a class="navbar-toggler" type="a" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -35,17 +35,17 @@
     <ul class="navbar-nav">
     	<c:if test="${!empty mvo}">
 	    	<li class="nav-item">
-	        <a class="nav-link" href="#" onMouseOver="showKoreanText(this, '질병감지')" onMouseOut="showKoreanText(this, 'Detection')" onClick="location.href='./03'">Disease Detection</a>
+	        <a class="nav-link" href="#" onMouseOver="showKoreanText(this, '질병감지')" onMouseOut="showKoreanText(this, 'Detection')" onClick="location.href='./03'"> Detection</a>
 	      </li>
 	      <li class="nav-item">
-	        <a class="nav-link" href="#" onMouseOver="showKoreanText(this, '히스토리')" onMouseOut="showKoreanText(this, 'History')" onClick="location.href='./07'">Disease History</a>
+	        <a class="nav-link" href="#" onMouseOver="showKoreanText(this, '히스토리')" onMouseOut="showKoreanText(this, 'History')" onClick="location.href='./07'"> History</a>
 	      </li>
       </c:if>
       <li class="nav-item">
-        <a class="nav-link" href="#" onMouseOver="showKoreanText(this, '질병정보')" onMouseOut="showKoreanText(this, 'information')" onClick="location.href='./04'">Disease Search</a>
+        <a class="nav-link" href="#" onMouseOver="showKoreanText(this, '질병정보')" onMouseOut="showKoreanText(this, 'information')" onClick="location.href='./04'"> information</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#" onMouseOver="showKoreanText(this, '커뮤니티')" onMouseOut="showKoreanText(this, 'Community')" onClick="location.href='./05'">Information Sharing</a>
+        <a class="nav-link" href="#" onMouseOver="showKoreanText(this, '커뮤니티')" onMouseOut="showKoreanText(this, 'Community')" onClick="location.href='./05'"> Community</a>
       </li>
    </ul>
    
