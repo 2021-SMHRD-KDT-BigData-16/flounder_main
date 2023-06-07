@@ -67,7 +67,11 @@
 	}
 </script>
 
-
+ <script>
+        function goBack() {
+            window.history.back(); // 이전 페이지로 이동
+        }
+    </script>
 
 </head>
 <body>
@@ -104,7 +108,7 @@
 										<textarea rows="5" name="c_text" class="form-control">${mo.c_text}</textarea>
 									</div>
 									<div class="form-group text-center">
-										<button id="cancel" type="button" class="btn btn-sm btn-primary">취소</button>
+										<button id="cancel" type="button" class="btn btn-sm btn-primary" onclick="goBack()">취소</button>
 										<button type="submit" class="btn btn-sm btn-primary">
 											<input type="hidden" name="c_id" value="${mo.c_id}">
 											제출
