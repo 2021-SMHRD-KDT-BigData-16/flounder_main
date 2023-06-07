@@ -55,6 +55,13 @@
 }
  
 </style>
+
+ <script>
+        function goBack() {
+            window.history.back(); // 이전 페이지로 이동
+        }
+    </script>
+
 </head>
 
 <body>
@@ -87,7 +94,7 @@
 							<input type="file" name="file" class="form-control-file" id="img_path" name="img_path" accept="image/*,video/*" required>
 						</div>
 						<div class="d-flex justify-content-end">
-										<button data-btn="list" class="btn btn-sm btn-primary mr-2">취소</button>
+										<button data-btn="list" class="btn btn-sm btn-primary mr-2" onclick="goBack()">취소</button>
 										<button type="submit" class="btn btn-sm btn-primary mr-2">
 											<input type="hidden" name="w_email" value="${mvo.m_email}">
 											제출
