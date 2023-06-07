@@ -1,5 +1,4 @@
-
-</html><%@ page language="java" contentType="text/html; charset=UTF-8"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
@@ -120,7 +119,7 @@
 										
 										<input type="file" name="file"
 											id="file" accept="image/*" onchange="readImage(this);" /><br/>
-											<br/> <img id="preview_img" height=200px />
+											<br/> <img id="preview_img" height=200px src="${cpath}/resources${mo.img_path}" />
 									</div>
 									</div>
 									<div class="form-group">
@@ -182,34 +181,4 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-lg-3">
-					<jsp:include page="97_right.jsp" />
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<script>
-		function openImageOptions() {
-			const fileInput = document.createElement("input");
-			fileInput.type = "file";
-			fileInput.accept = "image/*";
-			fileInput
-					.addEventListener(
-							"change",
-							function(event) {
-								const file = event.target.files[0];
-								if (file) {
-									const reader = new FileReader();
-									reader.onload = function(e) {
-										document
-												.querySelector("img[alt='이미지']").src = e.target.result;
-									};
-									reader.readAsDataURL(file);
-								}
-							});
-			fileInput.click();
-		}
-	</script>
-</body>
-</html>
+				<div class="col-lg
