@@ -72,10 +72,12 @@
 	</update>
 
 	<select id="get" resultType="kr.kvgs.entity.Community" parameterType="int">
-	select * from community where c_id=#{c_id}
+		select * from community where c_id=#{c_id}
 	</select>
 
-
+	<insert id="comm_write" parameterType="kr.kvgs.entity.Community">
+		insert into community (w_email, img_path, title, c_text) values (#{w_email}, #{img_path}, #{title}, #{c_text})
+	</insert>
 
 
 

@@ -35,4 +35,5 @@ public interface BoardMapper {
 	
 	public void history_remove(int dd_id);
 	
+	public int comm_write(Community com);
 }

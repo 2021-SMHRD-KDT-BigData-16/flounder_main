@@ -70,25 +70,29 @@
 			<div class="card">
 				<div class="card-body">
 					<h4 class="card-title">게시글 작성</h4>
-					<form action="${cpath}/write" method="post" enctype="multipart/form-data">
 					
-						
+					
+					
+					<form action="${cpath}/write" method="post" enctype="multipart/form-data">
 						<div class="form-group">
 							<label for="author">제목</label>
-							<input type="text" class="form-control" id="author" name="author" required>
+							<input type="text" class="form-control" id="title" name="title" required>
 						</div>
 						<div class="form-group">
 							<label for="content">내용</label>
-							<textarea class="form-control" id="content" name="content" rows="5" required></textarea>
+							<textarea class="form-control" id="c_text" name="c_text" rows="5" required></textarea>
 						</div>
 						<div class="form-group">
 							<label for="media">미디어 (이미지 또는 동영상)</label>
-							<input type="file" class="form-control-file" id="media" name="media" accept="image/*,video/*" required>
+							<input type="file" name="file" class="form-control-file" id="img_path" name="img_path" accept="image/*,video/*" required>
 						</div>
 						<div class="d-flex justify-content-end">
 										<button data-btn="list" class="btn btn-sm btn-primary mr-2">취소</button>
-										<button type="submit" class="btn btn-sm btn-primary mr-2">제출</button>
-									</div>
+										<button type="submit" class="btn btn-sm btn-primary mr-2">
+											<input type="hidden" name="w_email" value="${mvo.m_email}">
+											제출
+										</button>
+						</div>
 					</form>
 							
 				</div>

@@ -138,7 +138,7 @@ public class BoardController {
 	
 	
 	@PostMapping("/modify")
-	public String modify(Community com, RedirectAttributes rttr, MultipartFile file, HttpServletRequest request  ) { // num, title, content
+	public String modify(Community com, RedirectAttributes rttr, MultipartFile file, HttpServletRequest request) { // num, title, content
 		logger.info("**** BoardController modify *** {} ", file.getOriginalFilename());
 		
 		String fileName = file.getOriginalFilename(); 
@@ -182,6 +182,46 @@ public class BoardController {
 		return "redirect:/share_detail"; // --> 다시 select 해주는 건 share_detail
 	}
 	
+	@RequestMapping("/write")
+	public String comm_write(Community com, RedirectAttributes rttr, MultipartFile file, HttpServletRequest request)
+	{
+		
+		String fileName = file.getOriginalFilename(); 
+        long fileSize = file.getSize();
+        
+        String imagePath = request.getServletContext().getRealPath("/");
+		String fileExt = fileName.substring(fileName.lastIndexOf("."), fileName.length());
+		
+		UUID uuid = UUID.randomUUID();
+		String uniqueName = uuid.toString();
+		
+        String fileFullPath = imagePath + "resources\\DATA\\Share_Img\\" + uniqueName + fileExt;
+        String fileSaveDB = "/DATA/Share_Img/" + uniqueName + fileExt;
+		
+        File UploadFolder = new File(imagePath);
+        
+        logger.info("#############title, c_text################ : {}, {}", com.getTitle(), com.getC_text());
+        
+        try{
+    		if( !UploadFolder.exists() ) {
+    			logger.info("BoardController getFile imagePath : {} not exist", imagePath);
+    			UploadFolder.mkdir();
+    		}
+        
+			logger.info("BoardController getFile FullPath : {}, FileSize : {}", fileFullPath, fileSize);
+	        File destination = new File(fileFullPath);
+	        file.transferTo(destination);
+        }catch (Exception e){
+        	logger.info("에러 : " + e.getMessage());
+        }finally {
+        	
+        }
+
+        com.setImg_path(fileSaveDB);
+		
+		mapper.comm_write(com);
+		return "redirect:/community";
+	}
 	
     // 파일전송 요청을 처리하기 위한 컨트롤러
     @RequestMapping("/dd_register")	
