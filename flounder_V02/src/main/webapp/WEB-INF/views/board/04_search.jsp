@@ -169,6 +169,23 @@ $(".move").on("click", function(e){
 				pageForm.submit(); // 폼을 전송
 			});
  </script>
+ 
+ <script type="text/javascript"> 
+ 	
+ 	if(${empty list_search})
+ 	{
+ 		  // Get the button elements with the specified class name
+ 		 var buttons = document.getElementsByClassName('btn search-button');
+
+ 		 // Check if at least one button element is found
+ 		 if (buttons.length > 0) 
+ 		 {
+ 		   // Simulate a click event on the first button
+		    buttons[0].click();
+ 		 }
+ 	}
+
+</script>
 </body>
 
 </html>
