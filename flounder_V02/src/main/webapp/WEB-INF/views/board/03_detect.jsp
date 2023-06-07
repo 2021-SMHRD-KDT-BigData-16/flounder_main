@@ -158,11 +158,13 @@
 									</div>
 									<div class="form-group">
 										<label>업로드 이미지:</label> <br/><input type="file" name="file"
-											id="file" accept="image/*" onchange="readImage(this);" /> <img
-											id="preview_img" height=200px />
+											id="file" accept="image/*" onchange="readImage(this);" /> 
+											<br/>
+											<br/>
+											<img id="preview_img" height=200px />
 											<br/>
 									</div>
-
+									
 									<button type="submit" class="btn btn-sm btn-primary"
 										style="width: 45%; font-size: 0.8em;">등록</button>
 									<button type="reset" class="btn btn-sm btn-primary"
