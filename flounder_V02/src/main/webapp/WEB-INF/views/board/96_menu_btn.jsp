@@ -47,7 +47,11 @@
       <li class="nav-item">
         <a class="nav-link" href="#" onMouseOver="showKoreanText(this, '커뮤니티')" onMouseOut="showKoreanText(this, 'Community')" onClick="location.href='./05'"> Community</a>
       </li>
+      <c:if test="${!empty mvo}">
+   		${mvo.m_name}님 환영합니다
+   		</c:if>
    </ul>
+   
    
   </div>
   
