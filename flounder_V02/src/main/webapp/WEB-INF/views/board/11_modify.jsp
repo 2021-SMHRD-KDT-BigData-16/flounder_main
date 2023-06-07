@@ -81,104 +81,60 @@
 						<div class="card" style="margin: 20px;">
 							<div class="card-body" style="margin: 20px;">
 								<h4 class="card-title" style="text-align: center;">게시판 수정</h4>
-								
-								
-<!-- 								
-							<div class="row justify-content-center">
-								<form action="${cpath}/modify" method="post"
-									enctype="multipart/form-data">
-									<input type="hidden" name="dd_email" value="${mvo.m_email}" />
-									<input type="hidden" name="c_id" value="${mo.c_id}">
-									<div class="form-group">
-										<label>내용:</label>
-										<textarea rows="3" name="dd_comment" id="content"
-											class="form-control"></textarea>
-									</div>
-									<div class="form-group">
-										<label>업로드 이미지:</label> <input type="file" name="file"
-											id="file" accept="image/*" onchange="readImage(this);" /> <img
-											id="preview_img" height=200px />
-									</div>
-
-									<button type="submit" class="btn btn-sm btn-primary"
-										style="width: 45%; font-size: 0.8em;">등록</button>
-									<button type="reset" class="btn btn-sm btn-primary"
-										style="width: 45%; font-size: 0.8em;">취소</button>
-								</form>
-							</div>
--->									
-								
 
 								<form id="frm" action="${cpath}/modify" method="post"
 									enctype="multipart/form-data">
 									<div class="form-group">
 										<div class="form-group">
-										<label>업로드 이미지:</label> 
-										<br/>
-										<br/>
-										
-										<input type="file" name="file"
-											id="file" accept="image/*" onchange="readImage(this);" /><br/>
-											<br/> <img id="preview_img" height=200px src="${cpath}/resources${mo.img_path}" />
-									</div>
+											<label>업로드 이미지:</label> 
+											<br/>
+											<br/>
+											<input type="file" name="file" id="file" accept="image/*" onchange="readImage(this);" />
+											<br/>
+											<br/>
+											<img id="preview_img" height=200px src="${cpath}/resources${mo.img_path}" />
+										</div>
 									</div>
 									<div class="form-group">
-										<label>제목:</label> <input type="text" name="title"
-											value="${mo.title}" class="form-control" />
+										<label>제목:</label> 
+										<input type="text" name="title" value="${mo.title}" class="form-control" />
 									</div>
 									<div class="form-group">
 										<label>내용:</label>
 										<textarea rows="5" name="c_text" class="form-control">${mo.c_text}</textarea>
 									</div>
-
 									<div class="form-group text-center">
-										<button id="cancel" type="button"
-											class="btn btn-sm btn-primary">취소</button>
-										<button type="submit" class="btn btn-sm btn-primary" >
-										
+										<button id="cancel" type="button" class="btn btn-sm btn-primary">취소</button>
+										<button type="submit" class="btn btn-sm btn-primary">
 											<input type="hidden" name="c_id" value="${mo.c_id}">
-											
 											제출
 										</button>
 									</div>
 								</form>
-
-
-
-<!--  
-								<form id="frm" action="${cpath}/modify" method="post"
-									enctype="multipart/form-data">
-									<div class="form-group">
-										<div style="display: flex; justify-content: center;">
-											<img alt="이미지" height="300px" width="400px"
-												src="${cpath}/resources${mo.img_path}"
-												onclick="openImageOptions()">
-										</div>
-									</div>
-									<div class="form-group">
-										<label>제목:</label> <input type="text" name="title"
-											value="${mo.title}" class="form-control" />
-									</div>
-									<div class="form-group">
-										<label>내용:</label>
-										<textarea rows="10" name="c_text" class="form-control">${mo.c_text}</textarea>
-									</div>
-
-									<div class="form-group text-center">
-										<button id="cancel" type="button"
-											class="btn btn-sm btn-primary">취소</button>
-										<button type="submit" class="btn btn-sm btn-primary" >
-										
-											<input type="hidden" name="c_id" value="${mo.c_id}">
-											
-											제출
-										</button>
-									</div>
-								</form>
--->						
-								
 							</div>
 						</div>
 					</div>
 				</div>
-				<div class="col-lg
+				<div class="col-lg-3">
+					<jsp:include page="97_right.jsp" />
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script>
+		function readImage(input) {
+			if (input.files && input.files[0]) {
+				var reader = new FileReader();
+				reader.onload = function(e) {
+					document.getElementById('preview_img').src = e.target.result;
+				};
+				reader.readAsDataURL(input.files[0]);
+			} else {
+				document.getElementById('preview_img').src = "";
+			}
+		}
+	</script>
+</body>
+</html>
+
