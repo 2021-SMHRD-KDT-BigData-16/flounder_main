@@ -124,75 +124,42 @@
 								<strong>질병검사</strong>
 							</h5>
 
-							<!--             
-              <div class="form-group1">
-                <br />
-                <label>검사가 필요한 광어 사진:</label>
-                <br />
-                <input type="file" name="file" id="file" accept="image/*" onchange="readImage(this);" />
-              </div>
-              <div class="form-group2">
-                <br />
-                <img id="preview_img" height="200px" />
-              </div>
-              <div class="form-group">
-                <br/>               
-                <label>증상 입력:</label>
-                <br />
-                <textarea rows="3" name="dd_comment" id="content" class="form-control"></textarea>
-              </div>
-              <div class="form-group3">
-                <button type="submit" class="btn btn-sm btn-primary mr-2">등록 하기</button>
-              </div>
-            </div>
- -->
-
 							<div class="row justify-content-center">
-								<form action="${cpath}/dd_register" method="post"
-									enctype="multipart/form-data">
-									<input type="hidden" name="dd_email" value="${mvo.m_email}" />
-									<div class="form-group">
-										<label>내용:</label>
-										<textarea rows="3" name="dd_comment" id="content"
-											class="form-control"></textarea>
-									</div>
-									<div class="form-group">
-										<label>업로드 이미지:</label> <br/><input type="file" name="file"
-											id="file" accept="image/*" onchange="readImage(this);" /> 
-											<br/>
-											<br/>
+								<div class="col-lg-8">
+									<form action="${cpath}/dd_register" method="post"
+										enctype="multipart/form-data">
+										<input type="hidden" name="dd_email" value="${mvo.m_email}" />
+										<div class="form-group">
+											<label>내용:</label>
+											<textarea rows="3" name="dd_comment" id="content"
+												class="form-control"></textarea>
+										</div>
+										<div class="form-group">
+											<label>업로드 이미지:</label> <br/>
+											<input type="file" name="file" id="file" accept="image/*" onchange="readImage(this);" /> 
+										</div>
+										<div class="form-group">
 											<img id="preview_img" height=200px />
-											<br/>
-									</div>
-									
-									<button type="submit" class="btn btn-sm btn-primary"
-										style="width: 45%; font-size: 0.8em;">등록</button>
-									<button type="reset" class="btn btn-sm btn-primary"
-										style="width: 45%; font-size: 0.8em;">취소</button>
-								</form>
+										</div>
+										<div class="form-group">
+											<button type="submit" class="btn btn-sm btn-primary"
+												style="width: 45%; font-size: 0.8em;">등록</button>
+											<button type="reset" class="btn btn-sm btn-primary"
+												style="width: 45%; font-size: 0.8em;">취소</button>
+										</div>
+									</form>
+								</div>
 							</div>
-
-
-
-
-
-
-
-
-
 						</div>
 						<a class="nav-link" href="#" onClick="location.href='./51'">파이썬
 							플라스크 연동 테스트</a> <br />
 					</div>
 				</div>
-					</div>
-				<div class="col-lg-3">
-					<jsp:include page="97_right.jsp" />
-				</div>
+			</div>
+			<div class="col-lg-3">
+				<jsp:include page="97_right.jsp" />
 			</div>
 		</div>
-	
+	</div>
 </body>
-
 </html>
-

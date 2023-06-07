@@ -15,9 +15,10 @@
     color: white;
     padding: 5px;
     border-radius: 3px;
-    font-size: 30px;
+    font-size: 24px;
     opacity: 0;
     transition: opacity 0.3s;
+   
     
   }
 </style>
@@ -47,15 +48,16 @@
       <li class="nav-item">
         <a class="nav-link" href="#" onMouseOver="showKoreanText(this, '커뮤니티')" onMouseOut="showKoreanText(this, 'Community')" onClick="location.href='./05'"> Community</a>
       </li>
-      <c:if test="${!empty mvo}">
-   		${mvo.m_name}님 환영합니다
-   		</c:if>
+    
    </ul>
    
    
   </div>
   
- <div class="form-inline my-2 my-lg-0">
+ <div class="form-inline my-2 my-lg-0" style="color: white;">
+  <c:if test="${!empty mvo}" >
+   		${mvo.m_name}님 환영합니다!&nbsp;&nbsp;
+   		</c:if>
     <c:choose>
         <c:when test="${!empty mvo}">
             <a class="btn btn-outline-light my-2 my-sm-0 mr-2" onMouseOver="showKoreanText(this, '로그아웃')" onMouseOut="showKoreanText(this, 'Logout')" type="a" onClick="location.href='${cpath}/logout'">Logout</a>
@@ -64,6 +66,7 @@
             <a class="btn btn-outline-light my-2 my-sm-0 mr-2" onMouseOver="showKoreanText(this, '로그인')" onMouseOut="showKoreanText(this, 'Login')" type="a" onClick="location.href='${cpath}/login'">Login</a>
         </c:otherwise>
     </c:choose>
+     
     <a class="btn btn-outline-light my-2 my-sm-0" type="a" data-toggle="collapse" data-target="#menuCollapse" aria-controls="menuCollapse" aria-expanded="false">
         <span class="navbar-toggler-icon"></span>
     </a>
