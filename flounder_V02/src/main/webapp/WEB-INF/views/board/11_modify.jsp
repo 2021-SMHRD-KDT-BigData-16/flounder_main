@@ -68,6 +68,11 @@
 	}
 </script>
 
+ <script>
+        function goBack() {
+            window.history.back(); // 이전 페이지로 이동
+        }
+	</script>
 
 
 </head>
@@ -134,7 +139,7 @@
 
 									<div class="form-group text-center">
 										<button id="cancel" type="button"
-											class="btn btn-sm btn-primary">취소</button>
+											class="btn btn-sm btn-primary" onclick="goBack()">취소</button>
 										<button type="submit" class="btn btn-sm btn-primary" >
 										
 											<input type="hidden" name="c_id" value="${mo.c_id}">
