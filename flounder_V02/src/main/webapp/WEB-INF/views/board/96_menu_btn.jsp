@@ -2,9 +2,18 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+
 <c:set var="cpath" value="${pageContext.request.contextPath}" />
-<link href="https://fonts.googleapis.com/css2?family=Dongle&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500;700&display=swap" rel="stylesheet">
+
 <style>
+  body {
+font-family: 'Noto Sans KR', sans-serif;
+  }
+  
   .nav-item:hover .nav-link::after {
     content: attr(data-korean-name); /* Show Korean translation as pseudo-element content */
     position: absolute;
@@ -18,9 +27,8 @@
     font-size: 24px;
     opacity: 0;
     transition: opacity 0.3s;
-   
-    
   }
+
 </style>
 
 

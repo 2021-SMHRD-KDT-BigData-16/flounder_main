@@ -120,7 +120,7 @@
 						<br />
 						<div class="inner-box">
 							<h5 class="header"
-								style="text-align: center; margin-bottom: 20px;">
+								style="text-align: center; margin-bottom: 10px;">
 								<strong>질병검사</strong>
 							</h5>
 
@@ -131,7 +131,7 @@
 										<input type="hidden" name="dd_email" value="${mvo.m_email}" />
 										<div class="form-group">
 											<label>내용:</label>
-											<textarea rows="3" name="dd_comment" id="content"
+											<textarea rows="5" name="dd_comment" id="content"
 												class="form-control"></textarea>
 										</div>
 										<div class="form-group">
@@ -139,13 +139,13 @@
 											<input type="file" name="file" id="file" accept="image/*" onchange="readImage(this);" /> 
 										</div>
 										<div class="form-group">
-											<img id="preview_img" height=200px />
+											<img id="preview_img" height=135px />
 										</div>
 										<div class="form-group">
 											<button type="submit" class="btn btn-sm btn-primary"
-												style="width: 45%; font-size: 0.8em;">등록</button>
+												style="width: 45%; font-size: 1em;">등록</button>&nbsp&nbsp&nbsp&nbsp
 											<button type="reset" class="btn btn-sm btn-primary"
-												style="width: 45%; font-size: 0.8em;">취소</button>
+												style="width: 45%; font-size: 1em;">취소</button>
 										</div>
 									</form>
 								</div>
