@@ -5,15 +5,16 @@
 
 <c:set var="cpath" value="${pageContext.request.contextPath}" />
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500;700&display=swap" rel="stylesheet">
-
+<link rel="stylesheet" href="./resources/css/style.css">
 <style>
-  body {
-font-family: 'Noto Sans KR', sans-serif;
+  @font-face {
+    font-family: 'FontName';
+    src: url('./resources/css/NanumSquareNeo-bRg.ttf');
   }
-  
+
+  body {
+    font-family: 'FontName', sans-serif;
+  }
   .nav-item:hover .nav-link::after {
     content: attr(data-korean-name); /* Show Korean translation as pseudo-element content */
     position: absolute;

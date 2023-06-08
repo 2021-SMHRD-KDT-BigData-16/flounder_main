@@ -143,7 +143,7 @@
 										</div>
 										<div class="form-group">
 											<button type="submit" class="btn btn-sm btn-primary"
-												style="width: 45%; font-size: 1em;">등록</button>&nbsp&nbsp&nbsp&nbsp
+												style="width: 45%; font-size: 1em;">등록</button>&nbsp&nbsp
 											<button type="reset" class="btn btn-sm btn-primary"
 												style="width: 45%; font-size: 1em;">취소</button>
 										</div>
