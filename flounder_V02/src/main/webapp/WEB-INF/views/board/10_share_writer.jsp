@@ -73,10 +73,11 @@
 				<div class="card">
 			
 	<div class="row justify-content-center mt-4">
-		<div class="col-lg-6">
+		<div class="col-lg-6" >
+						<h5 class="card-title" style="text-align: center;"><strong>게시판 작성</strong></h5>
+					<br/>
 			<div class="card">
 				<div class="card-body">
-					<h4 class="card-title">게시글 작성</h4>
 					
 					
 					
