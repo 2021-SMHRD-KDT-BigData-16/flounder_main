@@ -97,7 +97,8 @@
 
 										</div>
 										<br />
-										<h5 class="card-text">작성자: ${vo.m_name}</h5>
+										<h5 class="card-text" 
+										style ="font-size : 14px;"> ${vo.m_name}</h5>
 										<p class="card-title">${vo.title}</p>
 										<p class="card-text">
 											<small class="text-muted"><fmt:formatDate
