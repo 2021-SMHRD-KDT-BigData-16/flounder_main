@@ -46,7 +46,7 @@
 .inner-box {
    border: 1px solid #5AD5C8;
    border-radius: 10px;
-   padding: 70px;
+   padding: 50px;
    margin: 10px;
    display: flex;
    flex-direction: column;

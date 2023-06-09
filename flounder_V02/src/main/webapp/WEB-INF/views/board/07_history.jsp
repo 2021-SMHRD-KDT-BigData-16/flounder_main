@@ -177,7 +177,7 @@ table.table-bordered tbody tr {
 														</div>
 
 
-														<div class="col-md-6 text-box-right chat-bubble">
+														<div class="col-md-12 text-box-right chat-bubble">
 
 
 																<div class="name">${vo.m_name}</div>
