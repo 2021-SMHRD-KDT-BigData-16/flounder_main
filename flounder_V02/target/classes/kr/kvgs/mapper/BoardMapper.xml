@@ -38,7 +38,7 @@
 	</select>
 
 	<insert id="dd_insert" parameterType="kr.kvgs.entity.DetectDis">
-    insert into detect_dis (dd_email, org_img, dd_comment) values (#{dd_email}, #{org_img}, #{dd_comment})
+    insert into detect_dis (dd_email, org_img, dt_img, dd_comment) values (#{dd_email}, #{org_img}, #{dt_img}, #{dd_comment})
 		
 	</insert>
 	

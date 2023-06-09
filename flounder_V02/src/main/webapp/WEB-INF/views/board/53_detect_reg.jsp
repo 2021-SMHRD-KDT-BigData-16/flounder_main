@@ -137,31 +137,34 @@
                         style="text-align: center; margin-bottom: 10px;">
                         <strong>질병진단 및 결과등록</strong>
                      </h5>
-                     
 
                      <div class="row justify-content-center">
                         <div class="col-lg-8">
-                           <form action="${cpath}/dd_register" method="post"
+                           <form action="${cpath}/dd_register2" method="post"
                               enctype="multipart/form-data">
                               <input type="hidden" name="dd_email" value="${mvo.m_email}" />
+                              <input type="hidden" name="org_img" value="/${org_image}" />
+                              <input type="hidden" name="dt_img" value="/${pred_image}" />
                               <div class="form-group">
-<!--                               
-			                        <img alt="원본"	src="${cpath}/resources/images/01_back.jpg" class="card-img-top" 
+                              <h5> 진단된 질병 : ${dis_name} </h5>
+			                        <img alt="원본" src="${cpath}/resources/${org_image}" class="card-img-top" 
 			                                  style="width: 100%; height: 100%; object-fit: cover;">
- -->			                                  
-			                        <img alt="원본"	src="${cpath}/resources/org_test.jpg" class="card-img-top" 
-			                                  style="width: 100%; height: 100%; object-fit: cover;">
-			                        <img alt="진단"	src="${cpath}/pred_test.jpg" class="card-img-top" 
+			                        <img alt="진단"	 src="${cpath}/resources/${pred_image}" class="card-img-top" 
 			                                  style="width: 100%; height: 100%; object-fit: cover;">
                               </div>
                               <div class="form-group">
-                                 <img id="preview_img" height=135px />
+                                 <label>내용:</label>
+                                 <textarea rows="5" name="dd_comment" id="content"
+                                    class="form-control">
+                                    
+                                 </textarea>
                               </div>
+                              
                               <div class="form-group">
                                  <button type="submit" class="btn btn-sm btn-primary"
-                                    style="width: 45%; font-size: 1em;">등록</button>&nbsp&nbsp&nbsp&nbsp
+                                    style="width: 100%; font-size: 1em;">등록</button>&nbsp&nbsp&nbsp&nbsp
                                  <button type="reset" class="btn btn-sm btn-primary"
-                                    style="width: 45%; font-size: 1em;">취소</button>
+                                    style="width: 100%; font-size: 1em;">취소</button>
                               </div>
                            </form>
                         </div>

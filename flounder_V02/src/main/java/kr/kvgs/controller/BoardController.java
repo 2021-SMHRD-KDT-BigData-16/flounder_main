@@ -284,14 +284,60 @@ public class BoardController {
     }
 
 	@GetMapping("/detect_reg") 
-	public String detect_reg(String dd_email, String org_img, String pred_img, Model model, HttpServletRequest request) {
-    	logger.info("BoardController org_img : {}, pred_img : {}", org_img, pred_img);
+	public String detect_reg(String dis_name, String org_image, String pred_image, Model model, HttpServletRequest request) {
+    	logger.info("BoardController org_img : {}, pred_img : {}", org_image, pred_image);
         String imagePath = request.getServletContext().getRealPath("/");
     	logger.info("BoardController imagePath : {}", imagePath);
 
-    	model.addAttribute("org_img", org_img);		
-		model.addAttribute("pred_img", pred_img);		
+    	model.addAttribute("dis_name", dis_name);		
+    	model.addAttribute("org_image", org_image);		
+		model.addAttribute("pred_image", pred_image);		
     	return "board/53_detect_reg";
 	}
 
+    // 파일전송 요청을 처리하기 위한 컨트롤러
+    @RequestMapping("/dd_register2")	
+    public String dd_register2(DetectDis vo, HttpServletRequest request, Model model){
+        logger.info("BoardController dd_register2 dd_email : {}, dd_comment : {}", vo.getDd_email(), vo.getDd_comment());
+        logger.info("****** dd_register2 dd_email : {}, dd_comment : {}", vo.getDt_img(), vo.getOrg_img());
+		int iRet = mapper.dd_insert(vo);
+    	
+//        String fileName = file.getOriginalFilename(); 
+//        long fileSize = file.getSize();
+//        
+//        String imagePath = request.getServletContext().getRealPath("/");
+//		String fileExt = fileName.substring(fileName.lastIndexOf("."), fileName.length());
+//		
+//		UUID uuid = UUID.randomUUID();
+//		String uniqueName = uuid.toString();
+//		
+//        String fileFullPath = imagePath + "resources\\DATA\\DetectImg\\" + uniqueName + fileExt;
+//        String fileSaveDB = "/DATA/DetectImg/" + uniqueName + fileExt;
+//		
+//		logger.info("BoardController dd_register fileFullPath : {}, fileSaveDB : {}", fileFullPath, fileSaveDB);
+//
+//		File UploadFolder = new File(imagePath);
+//        try{
+//    		if( !UploadFolder.exists() ) {
+//    			logger.info("BoardController getFile imagePath : {} not exist", imagePath);
+//    			UploadFolder.mkdir();
+//    		}
+//        
+//			logger.info("BoardController getFile FullPath : {}, FileSize : {}", fileFullPath, fileSize);
+//	        File destination = new File(fileFullPath);
+//	        file.transferTo(destination);
+//        }catch (Exception e){
+//        	logger.info("에러 : " + e.getMessage());
+//        }finally {
+//        	
+//        }
+//
+//        vo.setOrg_img(fileSaveDB);
+//		int iRet = mapper.dd_insert(vo);
+        
+        return "redirect:/history";
+    }	
+    
+	
+	
 }
