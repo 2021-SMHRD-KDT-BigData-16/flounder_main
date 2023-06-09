@@ -38,9 +38,6 @@
 <a class="navbar-brand" href="#" onClick="location.href='./02'">
   <img src="./resources/images/아이콘4.png" height=60px; alt="홈" />
 </a>
-  <a class="navbar-toggler" type="a" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </a>
   <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
     <ul class="navbar-nav">
     	<c:if test="${!empty mvo}">
@@ -75,8 +72,7 @@
             <a class="btn btn-outline-light my-2 my-sm-0 mr-2" onMouseOver="showKoreanText(this, '로그인')" onMouseOut="showKoreanText(this, 'Login')" type="a" onClick="location.href='${cpath}/login'">Login</a>
         </c:otherwise>
     </c:choose>
-     
-    <a class="btn btn-outline-light my-2 my-sm-0" type="a" data-toggle="collapse" data-target="#menuCollapse" aria-controls="menuCollapse" aria-expanded="false">
+    <a class="navbar-toggler" type="a" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </a>
 </div>

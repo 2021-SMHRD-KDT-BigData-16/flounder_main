@@ -91,7 +91,7 @@ pageEncoding="UTF-8"%>
                         <form action="${cpath}/search" method="post" class="form-inline my-2 my-lg-0 d-flex justify-content-center">
                             <div class="row">
                                 <div class="col">
-                                    <input class="form-control mr-sm-2 text-center" type="search" name="str_search" placeholder="Search" aria-label="Search" style="width: 110%;">
+                                    <input class="form-control mr-sm-2 text-center" type="search" name="str_search" placeholder="Search" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Search'" aria-label="Search" style="width: 110%;">
                                 </div>
                                 <div class="col-auto">
                                     <button class="btn search-button" type="submit">검색</button>
