@@ -86,7 +86,7 @@ pageEncoding="UTF-8"%>
                 <div class="card">
                     <!-- 질병검색 -->
                     <div class="card-body" style="position: relative;">
-                        <h4 class="card-title text-center"> 질병 검색 </h4>
+                        <h4 class="card-title text-center"> 질병 정보 </h4>
                         </br>
                         <form action="${cpath}/search" method="post" class="form-inline my-2 my-lg-0 d-flex justify-content-center">
                             <div class="row">

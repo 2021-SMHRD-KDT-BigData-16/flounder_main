@@ -34,7 +34,7 @@
 
 
 
-<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #5AD5C8; font-size: 20px; , sans-serif;">
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #5AD5C8; font-size: 20px;  font-weight: bold;, sans-serif;">
 <a class="navbar-brand" href="#" onClick="location.href='./02'">
   <img src="./resources/images/아이콘4.png" height=60px; alt="홈" />
 </a>
@@ -63,9 +63,9 @@
    
   </div>
   
- <div class="form-inline my-2 my-lg-0" style="color: white;">
+ <div class="form-inline my-2 my-lg-0" style="color: white; font-size: 16px;  font-weight: normal;">
   <c:if test="${!empty mvo}" >
-   		${mvo.m_name}님 환영합니다!&nbsp;&nbsp;
+   		${mvo.m_name}님 환영합니다!&nbsp;&nbsp;&nbsp;
    		</c:if>
     <c:choose>
         <c:when test="${!empty mvo}">
