@@ -82,6 +82,11 @@
 			<div class="row">
 				<div class="col-lg-9">
 					<div class="feed-box">
+					<h5 class="header"
+								style="text-align: center; margin-bottom: 10px;">
+								<br />
+								<strong>정보 공유</strong>
+							</h5>
 						<div style="padding: 20px;"
 							class="d-flex flex-column align-items-center">
 							<c:forEach var="vo" items="${list_comm}">
