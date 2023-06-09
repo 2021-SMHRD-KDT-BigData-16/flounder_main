@@ -108,85 +108,98 @@
 	<jsp:include page="96_menu_btn.jsp" />
 
 	<div class="card-body">
-		<div class="row">
-			<div class="col-lg-9">
-				<div class="card">
-					<br />
-					<div class="card-body">
-						<div class="container">
-							<br />
-							<div class="row">
+	<div class="row">
+		<div class="col-lg-9">
+			<div class="card">
+				<br />
+				<div class="card-body">
+					<div class="container">
+						<br />
+						<div class="row">
 
-								<div class="col-md-6">
-									<div class="card2">
-										<!-- First image here -->
-										<img alt="이미지"
-											style="object-fit: cover; width: 100%; height: auto; margin-bottom: 10px; margin: auto;"
-											src="${cpath}/resources${history_detail.org_img}">
-									</div>
-								</div>
-								<div class="col-md-6">
-									<div class="card2">
-										<!-- Second image here -->
-										<img alt="이미지"
-											style="object-fit: cover; width: 100%; height: auto; margin-bottom: 10px; margin: auto;"
-											src="${cpath}/resources${history_detail.dt_img}">
-									</div>
+							<div class="col-md-6">
+								<div class="card2">
+									<!-- First image here -->
+									<img alt="이미지"
+										style="object-fit: cover; width: 100%; height: auto; margin-bottom: 10px; margin: auto;"
+										src="${cpath}/resources${history_detail.org_img}">
 								</div>
 							</div>
-							<br />
-							<div class="row">
-								<div class="col-md-12">
-									<div class="card2">
-									  <div style="width: 30%;">
-        <table class="table_contents">
-										<!-- Feed content here -->
-											<tr>
-												<td>내용</td>
-												<td>${fn:replace(history_detail.dd_comment, newLineChar, "<br/>")}</td>
-												<!-- vo.content에서 \n를 찾아 <br>로 바꾼다. -->
-											</tr>
-											<tr>
-												<td>작성자</td>
-												<td>${history_detail.m_name}</td>
-											</tr>
-											<tr>
-												<td>작성일</td>
-												<td><fmt:formatDate value="${history_detail.dd_date}"
-														pattern="yyyy-MM-dd HH:mm:ss" /></td>
-											</tr>
-										</table>
-										 </div>
-										 <div class="text-center mt-4">
-											<!--  <form id="frm" action="${cpath}/history" method="GET" style="display: inline;>-->
-									   <button data-btn="list" class="btn btn-sm btn-primary">목록</button>
-								
-											</form>
-											<span>&nbsp;</span> 				
-											<form id="frm" action="${cpath}/remove" method="POST" style="display: inline;">
-										    <input type="hidden" name="c_id" value="${share_detail.c_id}">
-										    <button type="submit" data-btn="remove" class="btn btn-sm btn-primary">삭제</button>
-										    <input type="hidden" id="dd_id" name="dd_id" value="${history_detail.dd_id}">
-										</form>
-									
-										
-										</div>
-									</div>
+							<div class="col-md-6">
+								<div class="card2">
+									<!-- Second image here -->
+									<img alt="이미지"
+										style="object-fit: cover; width: 100%; height: auto; margin-bottom: 10px; margin: auto;"
+										src="${cpath}/resources${history_detail.dt_img}">
 								</div>
 							</div>
-							<br />
-
 						</div>
 						<br />
+						<div class="row">
+							<div class="col-md-6">
+								<div class="card2">
+								  <div style="width: 50%;">
+                                    <table class="table_contents">
+										<!-- 첫 번째 내용 -->
+										<tr>
+											<td>${history_detail.m_name}</td>
+										</tr>
+										<tr>
+											<td>${fn:replace(history_detail.dd_comment, newLineChar, "<br/>")}</td>
+											<!-- vo.content에서 \n를 찾아 <br>로 바꿉니다. -->
+										</tr>
+										<tr>
+											<td><fmt:formatDate value="${history_detail.dd_date}"
+													pattern="yyyy-MM-dd HH:mm:ss" /></td>
+										</tr>
+									</table>
+								  </div>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="card2">
+								  <div style="width: 50%;">
+                                    <table class="table_contents">
+										<!-- 두 번째 내용 -->
+										<tr>
+											<td>${history_detail.m_name}</td>
+										</tr>
+										<tr>
+											<td>${fn:replace(history_detail.dd_comment, newLineChar, "<br/>")}</td>
+												<!-- vo.content에서 \n를 찾아 <br>로 바꿉니다. -->
+										</tr>
+										<tr>
+											<td><fmt:formatDate value="${history_detail.dd_date}"
+													pattern="yyyy-MM-dd HH:mm:ss" /></td>
+										</tr>
+									</table>
+								  </div>
+								</div>
+							</div>
+						</div>
+						<br />
+						<div class="text-center mt-4">
+							<form id="frm" action="${cpath}/history" method="GET" style="display: inline;">
+								<button data-btn="list" class="btn btn-sm btn-primary">목록</button>
+							</form>
+							<span> </span> 				
+							<form id="frm" action="${cpath}/remove" method="POST" style="display: inline;">
+								<input type="hidden" name="c_id" value="${share_detail.c_id}">
+								<button type="submit" data-btn="remove" class="btn btn-sm btn-primary">삭제</button>
+								<input type="hidden" id="dd_id" name="dd_id" value="${history_detail.dd_id}">
+							</form>
+						</div>
 					</div>
+					<br />
 				</div>
 			</div>
+		</div>
 
-			<div class="col-lg-3">
-				<jsp:include page="97_right.jsp" />
-			</div>
+		<div class="col-lg-3">
+			<jsp:include page="97_right.jsp" />
 		</div>
 	</div>
+</div>
 
 </body>
 
