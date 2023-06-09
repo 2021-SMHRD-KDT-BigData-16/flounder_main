@@ -129,7 +129,7 @@
 		<div class="row justify-content-end">
 			<div class="col-lg-9">
 				<div class="text-center">
-					<a href="${cpath}/writer" class="btn btn-sm btn-primary mr-2">글쓰기</a>
+					<a href="${cpath}/writer" class="btn btn-lg btn-primary mr-2">글쓰기</a>
 				</div>
 			</div>
 		</div>

@@ -147,6 +147,75 @@
 	</div>
 </div>
 
+<!-- 답글 작성 -->
+<div class="card mt-4">
+    <h5 class="card-header">답글 작성</h5>
+    <div class="card-body">
+        <form action="${cpath}/reply" method="post">
+            <div class="form-group">
+                <label for="replyText">답글 내용:</label>
+                <textarea class="form-control" id="reply" name="reply" rows="3"></textarea>
+            </div>
+            <input type="hidden" name="c_id" value="${share_detail.c_id}">
+            <input type="hidden" name="r_email" value="${mvo.m_email}">
+            <button type="submit" class="btn btn-primary">답글 작성</button>
+        </form>
+    </div>
+</div>
+
+<!-- 답글 목록 -->
+<c:if test="${not empty reply}">
+    <div class="card mt-4">
+        <h5 class="card-header">답글 목록</h5>
+        <div class="card-body">
+            <ul class="list-group">
+                <c:forEach var="reply" items="${reply}">
+                    <li class="list-group-item">
+                        <div>
+                            <strong>${reply.r_name}</strong>
+                            <span>${reply.r_date}</span>
+                        </div>
+                        <p>${reply.reply}</p>
+                    </li>
+                </c:forEach>
+            </ul>
+        </div>
+    </div>
+</c:if>
+
+<!--  
+<c:choose>
+    <c:when test="${not empty reply}">
+        <div class="card mt-4">
+            <h5 class="card-header">답글 목록</h5>
+            <div class="card-body">
+                <ul class="list-group">
+                    <c:forEach var="replyItem" items="${reply}">
+                        <li class="list-group-item">
+                            <div>
+                                <strong>${replyItem.r_name}</strong>
+                                <span>${replyItem.r_date}</span>
+                            </div>
+                            <p>${replyItem.reply}</p>
+                        </li>
+                    </c:forEach>
+                </ul>
+            </div>
+        </div>
+    </c:when>
+    <c:otherwise>
+        <div class="card mt-4">
+            <h5 class="card-header">답글 목록</h5>
+            <div class="card-body">
+                <p>답글이 없습니다.</p>
+            </div>
+        </div>
+    </c:otherwise>
+</c:choose>
+-->
+
+
+
 </body>
 </html>
 

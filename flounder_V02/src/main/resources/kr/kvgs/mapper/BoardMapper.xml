@@ -78,7 +78,10 @@
 	<insert id="comm_write" parameterType="kr.kvgs.entity.Community">
 		insert into community (w_email, img_path, title, c_text) values (#{w_email}, #{img_path}, #{title}, #{c_text})
 	</insert>
-
+	
+	<insert id="reply_insert" parameterType="kr.kvgs.entity.Reply">
+		insert into reply (c_id, r_email, reply) values (#{c_id}, #{r_email}, #{reply})
+	</insert>
 
 
 </mapper>

@@ -9,6 +9,7 @@ import kr.kvgs.entity.DetectDis;
 import kr.kvgs.entity.Dis_search;
 import kr.kvgs.entity.HistoryDetail;
 import kr.kvgs.entity.Member;
+import kr.kvgs.entity.Reply;
 import kr.kvgs.entity.ShareDetail;
 
 public interface BoardMapper {
@@ -36,4 +37,6 @@ public interface BoardMapper {
 	public void history_remove(int dd_id);
 	
 	public int comm_write(Community com);
+	
+	public int reply_insert(Reply re);
 }

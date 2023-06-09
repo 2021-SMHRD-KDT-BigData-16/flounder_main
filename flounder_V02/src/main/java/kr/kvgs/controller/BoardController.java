@@ -23,6 +23,7 @@ import kr.kvgs.entity.DetectDis;
 import kr.kvgs.entity.Dis_search;
 import kr.kvgs.entity.HistoryDetail;
 import kr.kvgs.entity.Member;
+import kr.kvgs.entity.Reply;
 import kr.kvgs.entity.ShareDetail;
 import kr.kvgs.mapper.BoardMapper;
 
@@ -263,4 +264,17 @@ public class BoardController {
         
         return "redirect:/history";
     }	
+    
+    @RequestMapping("/reply")
+	public String reply(Reply re, Model model, RedirectAttributes rttr) {
+				
+    	logger.info("c_id : {}, r_email: {}", re.getC_id(), re.getR_email());
+    	
+		mapper.reply_insert(re);
+		//model.addAttribute("reply", re);
+		rttr.addAttribute("c_id", re.getC_id());
+		
+		return "redirect:/share_detail";
+	}
+    
 }

@@ -31,5 +31,4 @@
 	<context:component-scan base-package="kr.kvgs.controller" />
 	
 	
-	
 </beans:beans>
