@@ -90,7 +90,7 @@
 				//location.href="${cpath}/list";
 				formData.attr("action", "${cpath}/history");
 				formData.attr("method", "get");
-				// formData.find("#c_id").remove();
+				// formData.find("#dd_id").remove();
 			}
 			else if (btn == "remove") 
 			{
@@ -183,8 +183,7 @@
 								<button data-btn="list" class="btn btn-sm btn-primary">목록</button>
 							</form>
 							<span> </span> 				
-							<form id="frm" action="${cpath}/remove" method="POST" style="display: inline;">
-								<input type="hidden" name="c_id" value="${share_detail.c_id}">
+							<form id="frm" action="${cpath}/history_remove" method="POST" style="display: inline;">
 								<button type="submit" data-btn="remove" class="btn btn-sm btn-primary">삭제</button>
 								<input type="hidden" id="dd_id" name="dd_id" value="${history_detail.dd_id}">
 							</form>
