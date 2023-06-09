@@ -189,6 +189,7 @@
 								<input type="hidden" id="dd_id" name="dd_id" value="${history_detail.dd_id}">
 							</form>
 						</div>
+							<br/>
 					</div>
 					<br />
 				</div>
