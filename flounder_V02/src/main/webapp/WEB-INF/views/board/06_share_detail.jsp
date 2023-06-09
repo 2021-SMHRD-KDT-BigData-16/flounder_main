@@ -116,6 +116,8 @@
 
 							<div class="text-center mt-4">
 								<button data-btn="list" class="btn btn-sm btn-primary">목록</button>
+									
+ 
 								<!-- 로그인한 아이디와 게시물의 아이디가 같을경우 --> 
 								<c:if test="${mvo.m_email eq share_detail.w_email}">
 									<button data-btn="modify" class="btn btn-sm btn-primary">
@@ -127,16 +129,27 @@
 										삭제
 									</button>
 								</c:if> 
-								<c:if test="${!empty mvo}">
-									<button data-btn="reply" class="btn btn-sm btn-primary">답글</button>
-								</c:if>
-							</div>
+							
+    <div class="card-body" style="margin:10px; ">
+        <form action="${cpath}/reply" method="post">
+            <div class="form-group">
+                <label for="replyText">댓글:</label>
+                <textarea class="form-control" id="reply" name="reply" rows="1"></textarea>
+            </div>
+            <input type="hidden" name="c_id" value="${share_detail.c_id}">
+            <input type="hidden" name="r_email" value="${mvo.m_email}">
+            <button type="submit" class="btn btn-primary">댓글 작성</button>
+        </form>
+    </div>
+								</div>
 
 							<form id="frm">
 								<input type="hidden" id="c_id" name="c_id" value="${share_detail.c_id}">
 							</form>
 						
 					</div>
+	
+
 				</div>
 			</div>
 	
@@ -148,20 +161,7 @@
 </div>
 
 <!-- 답글 작성 -->
-<div class="card mt-4">
-    <h5 class="card-header">답글 작성</h5>
-    <div class="card-body">
-        <form action="${cpath}/reply" method="post">
-            <div class="form-group">
-                <label for="replyText">답글 내용:</label>
-                <textarea class="form-control" id="reply" name="reply" rows="3"></textarea>
-            </div>
-            <input type="hidden" name="c_id" value="${share_detail.c_id}">
-            <input type="hidden" name="r_email" value="${mvo.m_email}">
-            <button type="submit" class="btn btn-primary">답글 작성</button>
-        </form>
-    </div>
-</div>
+
 
 <!-- 답글 목록 -->
 <c:if test="${not empty reply}">
