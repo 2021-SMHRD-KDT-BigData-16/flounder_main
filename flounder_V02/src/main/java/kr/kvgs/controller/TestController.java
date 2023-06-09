@@ -125,6 +125,13 @@ public class TestController {
 			return "board/52_FileUpload_drag";
 	   }
 	   
+	   @RequestMapping("/53")
+	   public String test53() {
+			logger.info(" TestController : {}.", "test53");
+			
+			return "board/53_detect_reg";
+	   }
+	   
 	   @RequestMapping("/writer")
 	   public String testwriter() {
 			logger.info(" TestController : {}.", "test00");

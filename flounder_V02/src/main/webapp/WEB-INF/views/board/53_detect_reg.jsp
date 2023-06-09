@@ -138,24 +138,6 @@
                         <strong>질병진단 및 결과등록</strong>
                      </h5>
                      
-                     <div class="row justify-content-center">
-                        <div class="col-lg-8">
-                              <form action="http://121.179.7.40:5000/detect_dis" method="post" enctype="multipart/form-data">	
-                              <input type="hidden" name="dd_email" value="${mvo.m_email}" />
-                              <div class="form-group">
-                                 <label>질병진단 :</label> <br/>
-                                 <input type="file" name="org_image" id="file" accept="image/*" onchange="readDetectImage(this);" /> 
-                              </div>
-                              <div class="form-group">
-                                 <img id="detect_img" height=135px />
-                              </div>
-                              <div class="form-group">
-                                 <button type="submit" class="btn btn-sm btn-primary"
-                                    style="width: 45%; font-size: 1em;">진단하기</button>&nbsp&nbsp&nbsp&nbsp
-                              </div>
-                           </form>
-                        </div>
-                     </div>
 
                      <div class="row justify-content-center">
                         <div class="col-lg-8">
@@ -163,13 +145,14 @@
                               enctype="multipart/form-data">
                               <input type="hidden" name="dd_email" value="${mvo.m_email}" />
                               <div class="form-group">
-                                 <label>내용:</label>
-                                 <textarea rows="5" name="dd_comment" id="content"
-                                    class="form-control"></textarea>
-                              </div>
-                              <div class="form-group">
-                                 <label>업로드 이미지:</label> <br/>
-                                 <input type="file" name="file" id="file" accept="image/*" onchange="readImage(this);" /> 
+<!--                               
+			                        <img alt="원본"	src="${cpath}/resources/images/01_back.jpg" class="card-img-top" 
+			                                  style="width: 100%; height: 100%; object-fit: cover;">
+ -->			                                  
+			                        <img alt="원본"	src="${cpath}/resources/org_test.jpg" class="card-img-top" 
+			                                  style="width: 100%; height: 100%; object-fit: cover;">
+			                        <img alt="진단"	src="${cpath}/pred_test.jpg" class="card-img-top" 
+			                                  style="width: 100%; height: 100%; object-fit: cover;">
                               </div>
                               <div class="form-group">
                                  <img id="preview_img" height=135px />

@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.multipart.MultipartFile;
@@ -268,13 +269,29 @@ public class BoardController {
     @RequestMapping("/reply")
     public String reply(Reply re, Model model, RedirectAttributes rttr) {
              
-        logger.info("c_id : {}, r_email: {}", re.getC_id(), re.getR_email());
+       logger.info("c_id : {}, r_email: {}", re.getC_id(), re.getR_email());
         
        mapper.reply_insert(re);
        //model.addAttribute("reply", re);
        rttr.addAttribute("c_id", re.getC_id());
-       
        return "redirect:/share_detail";
     }
     
+    @RequestMapping("/detect")
+    public String detect() {
+    	logger.info(" BoardController : {}.", "detect");
+    	return "board/03_detect";
+    }
+
+	@GetMapping("/detect_reg") 
+	public String detect_reg(String dd_email, String org_img, String pred_img, Model model, HttpServletRequest request) {
+    	logger.info("BoardController org_img : {}, pred_img : {}", org_img, pred_img);
+        String imagePath = request.getServletContext().getRealPath("/");
+    	logger.info("BoardController imagePath : {}", imagePath);
+
+    	model.addAttribute("org_img", org_img);		
+		model.addAttribute("pred_img", pred_img);		
+    	return "board/53_detect_reg";
+	}
+
 }
