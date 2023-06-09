@@ -84,7 +84,7 @@
 					<div class="center-card">
 						<div class="card" style="margin: 20px;">
 							<div class="card-body" style="margin: 20px;">
-								<h4 class="card-title" style="text-align: center;">게시판 수정</h4>
+								<h5 class="card-title" style="text-align: center;"><strong>게시판 수정</strong></h5>
 
 								<form id="frm" action="${cpath}/modify" method="post"
 									enctype="multipart/form-data">
