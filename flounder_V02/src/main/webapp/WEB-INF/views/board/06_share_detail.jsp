@@ -83,7 +83,7 @@
 				<div class="center-card">
 					<div class="card"style="margin: 20px;">
 						
-							<h4 class="card-title" style="display: flex; justify-content: center; align-items: center;">게시물 상세</h4>
+							<h5 class="card-title" style="display: flex; justify-content: center; align-items: center;"><strong>게시물 상세</strong></h5>
 							<br/>
 								<tr>
 								 <div style="display: flex; justify-content: center;">
