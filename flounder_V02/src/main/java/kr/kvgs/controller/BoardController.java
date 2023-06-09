@@ -266,15 +266,15 @@ public class BoardController {
     }	
     
     @RequestMapping("/reply")
-	public String reply(Reply re, Model model, RedirectAttributes rttr) {
-				
-    	logger.info("c_id : {}, r_email: {}", re.getC_id(), re.getR_email());
-    	
-		mapper.reply_insert(re);
-		//model.addAttribute("reply", re);
-		rttr.addAttribute("c_id", re.getC_id());
-		
-		return "redirect:/share_detail";
-	}
+    public String reply(Reply re, Model model, RedirectAttributes rttr) {
+             
+        logger.info("c_id : {}, r_email: {}", re.getC_id(), re.getR_email());
+        
+       mapper.reply_insert(re);
+       //model.addAttribute("reply", re);
+       rttr.addAttribute("c_id", re.getC_id());
+       
+       return "redirect:/share_detail";
+    }
     
 }
