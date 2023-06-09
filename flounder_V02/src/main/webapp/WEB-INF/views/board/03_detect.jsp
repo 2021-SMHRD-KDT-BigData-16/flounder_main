@@ -85,7 +85,7 @@
 	background-color: #5AD5C8;
 	border-color: #5AD5C8;
 	color: white;
-	width: 300%;
+	width: 100%;
 	height: 40px;
 	font-size: 0.8em;
 }
@@ -144,9 +144,9 @@
 
 										<div class="form-group">
 											<button type="submit" class="btn btn-sm btn-primary"
-												style="width: 45%; font-size: 1em;">등록</button>&nbsp&nbsp
+												style="font-size: 1em;">등록</button>
 											<button type="reset" class="btn btn-sm btn-primary"
-												style="width: 45%; font-size: 1em;">취소</button>
+												style="font-size: 1em;">취소</button>
 										</div>
 									</form>
 								</div>
