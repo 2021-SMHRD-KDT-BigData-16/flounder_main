@@ -52,7 +52,7 @@ pageEncoding="UTF-8"%>
           
             <h4> image upload return json </h4> 
 	          <div class="row justify-content-center">
-               <form action="http://121.179.7.40:5000/process_image" method="post" enctype="multipart/form-data">	
+               <form action="http://121.179.7.40:5000/return_json" method="post" enctype="multipart/form-data">	
 <!-- 	             <form action="http://121.179.83.133:5000/process_image" method="post" enctype="multipart/form-data">  -->
 	                 <div class="form-group">
 	                   <label>내용:</label>
@@ -89,7 +89,9 @@ pageEncoding="UTF-8"%>
 	                 </div>
 	                 <div class="form-group">
 	                   <label>업로드 이미지:</label>
-	                   <input type="file" name="image" />
+                     <input type="file" name="image" id="file" accept="image/*" onchange="readImage(this);" />
+                       <img id = "preview_img" height = 200px/>
+	                   
 	                 </div>
 	                 <button type="submit" class="btn btn-sm btn-primary">플라스크 upload</button>
 	             </form>
@@ -100,6 +102,34 @@ pageEncoding="UTF-8"%>
         </div>
         
       </div>
+        
+        
+      <div class="row">
+      
+        <div class="col-lg-6">
+          <div class="card">
+          
+            <h4> image upload return image </h4> 
+	          <div class="row justify-content-center">
+ 	             <form action="http://121.179.7.40:5000/detect_disease" method="post" enctype="multipart/form-data">
+<!-- 	             <form action="http://121.179.83.133:5000/return_image" method="post" enctype="multipart/form-data">  -->
+	                 <div class="form-group">
+	                   <label>내용:</label>
+	                   <input type="text" name="title" />
+	                 </div>
+	                 <div class="form-group">
+	                   <label>업로드 이미지:</label>
+                     <input type="file" name="image" id="file" accept="image/*" onchange="readImage(this);" />
+                       <img id = "preview_img" height = 200px/>
+	                   
+	                 </div>
+	                 <button type="submit" class="btn btn-sm btn-primary">플라스크 upload</button>
+	             </form>
+	          </div>
+          </div>
+        </div>
+      </div>        
+        
         
     </div>  
   </body>

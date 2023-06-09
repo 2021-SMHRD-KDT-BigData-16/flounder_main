@@ -108,6 +108,20 @@
          document.getElementById('preview_img').src = "";
       }
    }
+   
+	function readDetectImage(input) {
+		if (input.files && input.files[0]) {
+			var reader = new FileReader();
+			reader.onload = function(e) {
+				document.getElementById('detect_img').src = e.target.result;
+			};
+			reader.readAsDataURL(input.files[0]);
+		} else {
+			document.getElementById('detect_img').src = "";
+		}
+	}
+	
+   
 </script>
 </head>
 <body>
@@ -121,8 +135,29 @@
                   <div class="inner-box">
                      <h5 class="header"
                         style="text-align: center; margin-bottom: 10px;">
-                        <strong>질병검사</strong>
+                        <strong>질병진단 및 결과등록</strong>
                      </h5>
+                     
+                     <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                              <form action="http://121.179.7.40:5000/detect_dis" method="post" enctype="multipart/form-data">	
+                              <input type="hidden" name="dd_email" value="${mvo.m_email}" />
+                              <div class="form-group">
+                                 <label>질병진단 :</label> <br/>
+                                 <input type="file" name="org_image" id="file" accept="image/*" onchange="readDetectImage(this);" /> 
+                              </div>
+                              <div class="form-group">
+                                 <img id="detect_img" height=135px />
+                              </div>
+                              <div class="form-group">
+                                 <button type="submit" class="btn btn-sm btn-primary"
+                                    style="width: 45%; font-size: 1em;">진단하기</button>&nbsp&nbsp&nbsp&nbsp
+                              </div>
+                           </form>
+                        </div>
+                     </div>
+                     
+                     
 
                      <div class="row justify-content-center">
                         <div class="col-lg-8">
@@ -150,6 +185,8 @@
                            </form>
                         </div>
                      </div>
+                     
+                     
                   </div>
                   <a class="nav-link" href="#" onClick="location.href='./51'">파이썬
                      플라스크 연동 테스트</a> <br />
