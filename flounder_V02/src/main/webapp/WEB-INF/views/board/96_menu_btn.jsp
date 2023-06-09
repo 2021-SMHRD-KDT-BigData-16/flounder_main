@@ -15,26 +15,13 @@
   body {
     font-family: 'FontName', sans-serif;
   }
-  .nav-item:hover .nav-link::after {
-    content: attr(data-korean-name); /* Show Korean translation as pseudo-element content */
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #5AD5C8; /* Set background color to #000A2E */
-    color: white;
-    padding: 5px;
-    border-radius: 3px;
-    font-size: 24px;
-    opacity: 0;
-    transition: opacity 0.3s;
-  }
+
 
 </style>
 
 
 
-<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #5AD5C8; font-size: 20px;  font-weight: bold;, sans-serif;">
+<nav class="navbar navbar-expand-lg navbar-dark" style=" background-color: #5AD5C8; font-size: 20px;  font-weight: bold;, sans-serif;">
 <a class="navbar-brand" href="#" onClick="location.href='./02'">
   <img src="./resources/images/아이콘4.png" height=60px; alt="홈" />
 </a>
@@ -42,17 +29,17 @@
     <ul class="navbar-nav">
     	<c:if test="${!empty mvo}">
 	    	<li class="nav-item">
-	        <a class="nav-link" href="#" onMouseOver="showKoreanText(this, '질병감지')" onMouseOut="showKoreanText(this, 'Detection')" onClick="location.href='./03'"> Detection</a>
+	        <a class="nav-link" style="color:#ffffff;" href="#" onMouseOver="showKoreanText(this, '질병감지')" onMouseOut="showKoreanText(this, 'Detection')" onClick="location.href='./03'"> Detection</a>
 	      </li>
 	      <li class="nav-item">
-	        <a class="nav-link" href="#" onMouseOver="showKoreanText(this, '히스토리')" onMouseOut="showKoreanText(this, 'History')" onClick="location.href='./07'"> History</a>
+	        <a class="nav-link" style="color:#ffffff;" href="#" onMouseOver="showKoreanText(this, '히스토리')" onMouseOut="showKoreanText(this, 'History')" onClick="location.href='./07'"> History</a>
 	      </li>
       </c:if>
       <li class="nav-item">
-        <a class="nav-link" href="#" onMouseOver="showKoreanText(this, '질병정보')" onMouseOut="showKoreanText(this, 'information')" onClick="location.href='./04'"> information</a>
+        <a class="nav-link" style="color:#ffffff;" href="#" onMouseOver="showKoreanText(this, '질병정보')" onMouseOut="showKoreanText(this, 'information')" onClick="location.href='./04'"> information</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#" onMouseOver="showKoreanText(this, '커뮤니티')" onMouseOut="showKoreanText(this, 'Community')" onClick="location.href='./05'"> Community</a>
+        <a class="nav-link" style="color:#ffffff;" href="#" onMouseOver="showKoreanText(this, '커뮤니티')" onMouseOut="showKoreanText(this, 'Community')" onClick="location.href='./05'"> Community</a>
       </li>
     
    </ul>
@@ -60,7 +47,7 @@
    
   </div>
   
- <div class="form-inline my-2 my-lg-0" style="color: white; font-size: 16px;  font-weight: normal;">
+ <div class="form-inline my-2 my-lg-0" style="color: white; font-size: 20px;  font-weight: normal;">
   <c:if test="${!empty mvo}" >
    		${mvo.m_name}님 환영합니다!&nbsp;&nbsp;&nbsp;
    		</c:if>
