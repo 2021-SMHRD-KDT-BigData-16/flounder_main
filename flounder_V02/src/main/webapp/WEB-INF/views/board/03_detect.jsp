@@ -117,12 +117,12 @@
 			<div class="col-lg-9">
 				<div class="card">
 					<div class="feed-section">
-						<br />
-						<div class="inner-box">
 							<h5 class="header"
 								style="text-align: center; margin-bottom: 10px;">
 								<strong>질병검사</strong>
 							</h5>
+						
+						<div class="inner-box">
 
 							<div class="row justify-content-center">
 								<div class="col-lg-8">
