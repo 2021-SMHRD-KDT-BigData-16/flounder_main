@@ -130,6 +130,11 @@
 									</button>
 								</c:if> 
 							
+							
+							
+							
+							
+							
     <div class="card-body" style="margin:10px; ">
         <form action="${cpath}/reply" method="post">
             <div class="form-group">
@@ -140,7 +145,8 @@
             <input type="hidden" name="r_email" value="${mvo.m_email}">
             <button type="submit" class="btn btn-primary">댓글 작성</button>
         </form>
-    </div>
+   
+				</div>
 								</div>
 
 							<form id="frm">
@@ -148,8 +154,6 @@
 							</form>
 						
 					</div>
-	
-
 				</div>
 			</div>
 	
