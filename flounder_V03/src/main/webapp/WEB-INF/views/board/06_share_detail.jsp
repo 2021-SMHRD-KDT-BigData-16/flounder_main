@@ -171,7 +171,6 @@ tr:hover { background-color: #F5F5F5; }
 													style="margin-left: 10px; align-self: flex-end;">입력</button>
 												<br />
 												
-
 											</div>
 											<c:if test="${not empty reply}">
 												
@@ -183,13 +182,10 @@ tr:hover { background-color: #F5F5F5; }
 																	<strong>${reply.r_name}</strong> 
 																</div>
 																<p>${reply.reply}</p>
-																<span>${reply.r_date}</span>
+																<span><fmt:formatDate value="${reply.r_date}" pattern="yyyy-MM-dd HH:mm:ss" /></span>
 															</li>
 														</c:forEach>
-														
 													</ul>
-
-
 												</c:if>
 										</form>
 									</div>
@@ -213,44 +209,7 @@ tr:hover { background-color: #F5F5F5; }
 			</div>
 		</div>
 	</div>
-
-	<!-- 답글 작성 -->
-
-
-	<!-- 답글 목록 -->
-
-
-	<!--  
-<c:choose>
-    <c:when test="${not empty reply}">
-        <div class="card mt-4">
-            <h5 class="card-header">답글 목록</h5>
-            <div class="card-body">
-                <ul class="list-group">
-                    <c:forEach var="replyItem" items="${reply}">
-                        <li class="list-group-item">
-                            <div>
-                                <strong>${replyItem.r_name}</strong>
-                                <span>${replyItem.r_date}</span>
-                            </div>
-                            <p>${replyItem.reply}</p>
-                        </li>
-                    </c:forEach>
-                </ul>
-            </div>
-        </div>
-    </c:when>
-    <c:otherwise>
-        <div class="card mt-4">
-            <h5 class="card-header">답글 목록</h5>
-            <div class="card-body">
-                <p>답글이 없습니다.</p>
-            </div>
-        </div>
-    </c:otherwise>
-</c:choose>
--->
-
+	
 
 
 </body>

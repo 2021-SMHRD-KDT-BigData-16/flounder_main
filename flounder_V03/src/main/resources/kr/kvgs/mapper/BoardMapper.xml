@@ -87,6 +87,7 @@
 		select r.r_id r_id, r.c_id c_id, r.r_email r_email, r.r_date r_date, r.reply reply, m.m_name r_name 
 		from reply r , member m
 		 where r.c_id=#{c_id} and m.m_email = r.r_email
+		 order by r.r_date desc
 	</select>
 
 
