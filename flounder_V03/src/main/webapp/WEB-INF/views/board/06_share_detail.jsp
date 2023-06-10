@@ -173,8 +173,7 @@ tr:hover { background-color: #F5F5F5; }
 												
 											</div>
 											<c:if test="${not empty reply}">
-												
-													<ul class="list-group" style="text-align:left">
+													<ul class="list-group" style="text-align:left"> 
 														<c:forEach var="reply" items="${reply}">
 														
 															<li class="list-group-item">
