@@ -190,7 +190,6 @@ tr:hover { background-color: #F5F5F5; }
 									</div>
 								</c:if>
 
-
 							</div>
 
 							<form id="frm">
