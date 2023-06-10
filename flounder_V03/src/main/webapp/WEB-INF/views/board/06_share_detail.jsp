@@ -43,19 +43,21 @@
 	background-color: transparent;
 	color: #5AD5C8;
 }
+
 table {
-     border-collapse: collapse;
-     width: 100%;
+	border-collapse: collapse;
+	width: 100%;
 }
 
 th, td {
-     padding: 10px;
-     border-bottom: 1px solid #CD5C5C;
+	padding: 10px;
+	border-bottom: 1px solid #CD5C5C;
 }
 
 /* 커서 갖다대면 색깔이 바뀌며 직관적으로 표현한다 */
-tr:hover { background-color: #F5F5F5; }
-
+tr:hover {
+	background-color: #F5F5F5;
+}
 </style>
 
 <script type="text/javascript">
@@ -92,7 +94,7 @@ tr:hover { background-color: #F5F5F5; }
 	<jsp:include page="96_menu_btn.jsp" />
 
 	<div class="card-body">
-		<div style="min-height: 200px;">
+		<div style="min-height: 400px;">
 			<div class="row">
 				<div class="col-lg-9">
 					<div class="center-card">
@@ -170,31 +172,41 @@ tr:hover { background-color: #F5F5F5; }
 												<button type="submit" class="btn btn-primary"
 													style="margin-left: 10px; align-self: flex-end;">입력</button>
 												<br />
-												
+
 											</div>
 											<c:if test="${not empty reply}">
-													<ul class="list-group" style="text-align:left"> 
-														<c:forEach var="reply" items="${reply}">
-														
-															<li class="list-group-item">
-																<div>
-																	<strong>${reply.r_name}</strong> 
-																</div>
-																<p>${reply.reply}<button data-btn="modify" class="btn btn-sm btn-primary">
-										수정
-									</button>
-									<button data-btn="remove" class="btn btn-sm btn-primary">
+												<ul class="list-group" style="text-align: left">
+													<c:forEach var="reply" items="${reply}">
+
+														<li class="list-group-item">
+															<div>
+																<strong>${reply.r_name}</strong>
+															</div>
+															<p>${reply.reply}
+																<!-- 	<button data-btn="remove" class="btn btn-sm btn-primary">
 										삭제
-									</button>
-							</p>
-															
-									
-																
-																<span><fmt:formatDate value="${reply.r_date}" pattern="yyyy.MM.dd HH:mm" /></span>
-															</li>
-														</c:forEach>
-													</ul>
-												</c:if>
+									</button>-->
+															</p> <span><fmt:formatDate value="${reply.r_date}"
+																	pattern="yyyy.MM.dd HH:mm" /></span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+															<button data-btn="remove"
+																class="btn btn-sm btn-primary ml-auto">삭제</button>
+
+
+														</li>
+
+													</c:forEach>
+												</ul>
+											</c:if>
 										</form>
 									</div>
 								</c:if>
@@ -216,7 +228,7 @@ tr:hover { background-color: #F5F5F5; }
 			</div>
 		</div>
 	</div>
-	
+
 
 
 </body>
