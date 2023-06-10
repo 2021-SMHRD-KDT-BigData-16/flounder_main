@@ -135,18 +135,21 @@
 							
 							
 							
-    <div class="card-body" style="margin:10px; ">
-        <form action="${cpath}/reply" method="post">
-            <div class="form-group">
-                <label for="replyText">댓글:</label>
-                <textarea class="form-control" id="reply" name="reply" rows="1"></textarea>
-            </div>
-            <input type="hidden" name="c_id" value="${share_detail.c_id}">
-            <input type="hidden" name="r_email" value="${mvo.m_email}">
-            <button type="submit" class="btn btn-primary">댓글 작성</button>
-        </form>
-   
-				</div>
+<div class="card-body" style="margin: 10px; display: flex; align-items: center;">
+    <form action="${cpath}/reply" method="post" style="flex: 1; width: 100%;">
+        <div class="form-group" style="display: flex; flex-direction: row;">
+            <label for="replyText" style="flex: 0 0 auto; margin-right: 10px;">댓글:</label>
+            <textarea class="form-control" id="reply" name="reply" rows="1" style="flex: 1; resize: none; height: auto;"></textarea>
+       
+        <input type="hidden" name="c_id" value="${share_detail.c_id}">
+        <input type="hidden" name="r_email" value="${mvo.m_email}">
+        <button type="submit" class="btn btn-primary" style="margin-left: 10px; align-self: flex-end;">입력</button>
+        </div>
+    </form>
+</div>
+
+
+
 								</div>
 
 							<form id="frm">
