@@ -1,5 +1,4 @@
-
-</html><%@ page language="java" contentType="text/html; charset=UTF-8"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
@@ -16,55 +15,56 @@
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
 <script>
-        $(document).ready(function () {
-			var pageForm = $("#pageForm");
-			// 상세보기로 이동
-			$(".move").on("click", function(e){ 
-				e.preventDefault(); // a tag의 고유한 기능을 막는 방법
-				var dd_id = $(this).attr("href");
-				var tag = "<input type='hidden' name='dd_id' value='"+dd_id+"'>";
-				pageForm.append(tag);
-				pageForm.attr("action", "${cpath}/history_detail");
-				pageForm.attr("method", "post");
-				pageForm.submit(); // 폼을 전송
-			 });
-        	
-        	
-            var loading = false;
-            var page = 1;
-            var container = $('#contentContainer');
+$(document).ready(function () {
+	var pageForm = $("#pageForm");
+	// 상세보기로 이동
+	$(".move").on("click", function(e){ 
+		e.preventDefault(); // a tag의 고유한 기능을 막는 방법
+		var dd_id = $(this).attr("href");
+		var tag = "<input type='hidden' name='dd_id' value='"+dd_id+"'>";
+		pageForm.append(tag);
+		pageForm.attr("action", "${cpath}/history_detail");
+		pageForm.attr("method", "post");
+		pageForm.submit(); // 폼을 전송
+	});
+	
+	
+	var loading = false;
+	var page = 1;
+	var container = $('#contentContainer');
 
-            function loadMoreContent() {
-                if (loading) {
-                    return;
-                }
+	function loadMoreContent() {
+		if (loading) {
+			return;
+		}
 
-                loading = true;
+		loading = true;
 
-                $.ajax({
-                    url: 'path/to/endpoint', // Replace with the actual endpoint URL
-                    type: 'GET',
-                    data: {page: page},
-                    success: function (response) {
-                        container.append(response);
-                        loading = false;
-                        page++;
-                    },
-                    error: function () {
-                        loading = false;
-                    }
-                });
-            }
+		$.ajax({
+			url: 'path/to/endpoint', // 실제 엔드포인트 URL로 교체하세요.
+			type: 'GET',
+			data: {page: page},
+			success: function (response) {
+				container.append(response);
+				loading = false;
+				page++;
+			},
+			error: function () {
+				loading = false;
+			}
+		});
+	}
 
-            $(window).scroll(function () {
-                if ($(window).scrollTop() + $(window).height() >= $(document).height()) {
-                    loadMoreContent();
-                }
-            });
+	$(window).scroll(function () {
+		if ($(window).scrollTop() + $(window).height() >= $(document).height()) {
+			loadMoreContent();
+		}
+	});
 
-            loadMoreContent();
-        });
-    </script>
+	loadMoreContent();
+});
+</script>
+
 <style>
 .container {
 	border: 1px solid #5AD5C8;
@@ -143,82 +143,59 @@ table.table-bordered tbody tr {
 	max-width: 600px;
 	margin: 0 auto;
 }
+
 .feed-box {
-  border: 1px solid #5AD5C8;
+	border: 1px solid #5AD5C8;
 }
-
-
 </style>
 </head>
- <body>
-    <jsp:include page="96_menu_btn.jsp" />
-    <div class="card-body">
-    <div style="min-height: 200px;"> 
-        <div class="row">
-            <div class="col-lg-9">
-                <div class="feed-box">
-                <br/>
-    <h5 class="header"
-								style="text-align: center; margin-bottom: 10px;">
-								<strong>나의 질병 히스토리</strong>
-							</h5>
-                    <div style="padding: 20px;" class="d-flex flex-column align-items-center"> 
-                        <c:forEach var="vo" items="${list_detect}">
-                            <div class="col-5 mb-4">
-                                <div class="card" style="padding: 20px;">
-                                    <div class="card-img-container"
-                                        style="width: 490px; height: 300px; overflow: hidden;">
-                                        
-                        <a class="move" href="${vo.dd_id}"> 
-                        <img alt="이미지"	src="${cpath}/resources/${vo.org_img}" class="card-img-top" 
-                                  style="width: 100%; height: 100%; object-fit: cover;">
-												</a>
-                                        
-														</div>
 
-
-														<div class="col-md-12 text-box-right chat-bubble">
-
-
-																<div class="name">${vo.m_name}</div>
-															<div class="chat-content">
-																<div class="title">${vo.dd_comment}</div>
-																
-
-
-																<div class="date">
-																	<fmt:formatDate value="${vo.dd_date}"
-																		pattern="yyyy-MM-dd HH:mm:ss" />
-																</div>
-															</div>
-														</div>
-													</div>
-												</div>
-											</td>
-										</tr>
-									</c:forEach>
-								</tbody>
-
-
-							</table>
-							
-		<form id="pageForm" >
-		</form>
-							
-							
-						</div>
-
-
+<body>
+<jsp:include page="96_menu_btn.jsp" />
+<div class="card-body">
+	<div style="min-height: 200px;"> 
+		<div class="row">
+			<div class="col-lg-9">
+				<div class="feed-box">
+					<br/>
+					<h5 class="header"
+						style="text-align: center; margin-bottom: 10px;">
+						<strong>나의 질병 히스토리</strong>
+					</h5>
+					<div style="padding: 20px;" class="d-flex flex-column align-items-center">
+						<c:forEach var="vo" items="${list_detect}">
+							<div class="col-lg-6 col-md-6 col-sm-12 mb-4">
+								<div class="card2">
+									<div class="card-img-container"
+										style="width: 100%; height: 200px; overflow: hidden;">
+										<a class="move" href="${vo.dd_id}">
+											<img alt="이미지"
+												src="${cpath}/resources/${vo.org_img}"
+												class="card-img-top"
+												style="width: 100%; height: 100%; object-fit: cover;">
+										</a>
+									</div>
+									<div class="content">
+										<div class="title">${vo.dd_comment}</div>
+										<div class="name">${vo.m_name}</div>
+										<div class="date">
+											<fmt:formatDate value="${vo.dd_date}"
+												pattern="yyyy-MM-dd HH:mm:ss" />
+										</div>
+									</div>
+								</div>
+							</div>
+						</c:forEach>
 					</div>
 				</div>
-
-
-				<div class="col-3">
-					<jsp:include page="97_right.jsp" />
-				</div>
+			</div>
+			<div class="col-lg-3">
+				<jsp:include page="97_right.jsp" />
 			</div>
 		</div>
-	
-
+	</div>
+</div>
+<form id="pageForm">
+</form>
 </body>
 </html>
