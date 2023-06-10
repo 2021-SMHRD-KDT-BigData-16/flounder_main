@@ -39,4 +39,6 @@ public interface BoardMapper {
 	public int comm_write(Community com);
 	
 	public int reply_insert(Reply re);
+
+	public List<Reply> getReply(int c_id);
 }

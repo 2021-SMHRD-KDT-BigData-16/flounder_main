@@ -83,5 +83,11 @@
 		insert into reply (c_id, r_email, reply) values (#{c_id}, #{r_email}, #{reply})
 	</insert>
 
+	<select id="getReply" parameterType="int" resultType="kr.kvgs.entity.Reply">
+		select r.r_id r_id, r.c_id c_id, r.r_email r_email, r.r_date r_date, r.reply reply, m.m_name r_name 
+		from reply r , member m
+		 where r.c_id=#{c_id} and m.m_email = r.r_email
+	</select>
+
 
 </mapper>

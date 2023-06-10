@@ -95,6 +95,10 @@ public class BoardController {
 		
 		logger.info("***** pppppppppppppppppppppppp *****{}", sd_one.getC_id());
 		
+		// 댓글 뿌려주는 리스트 형식 만들기 
+		List<Reply> reply = mapper.getReply(c_id);
+		model.addAttribute("reply", reply);
+		
 		return "board/06_share_detail";
 	}
 	
@@ -267,15 +271,18 @@ public class BoardController {
     }	
     
     @RequestMapping("/reply")
-    public String reply(Reply re, Model model, RedirectAttributes rttr) {
-             
-       logger.info("c_id : {}, r_email: {}", re.getC_id(), re.getR_email());
-        
-       mapper.reply_insert(re);
-       //model.addAttribute("reply", re);
-       rttr.addAttribute("c_id", re.getC_id());
-       return "redirect:/share_detail";
-    }
+	public String reply(Reply re, RedirectAttributes rttr) {
+    	
+    	mapper.reply_insert(re);
+    	rttr.addAttribute("c_id", re.getC_id());
+		// model.addAttribute("c_id", re.getC_id());
+		
+		// 댓글을 적은 해당 게시글 가져오기
+		/*Community cm = mapper.get(re.getC_id());
+		model.addAttribute("", cm); */
+		
+		return "redirect:/share_detail";
+	}
     
     @RequestMapping("/detect")
     public String detect() {
@@ -294,6 +301,9 @@ public class BoardController {
 		model.addAttribute("pred_image", pred_image);		
     	return "board/53_detect_reg";
 	}
+	
+	
+	
 
     // 파일전송 요청을 처리하기 위한 컨트롤러
     @RequestMapping("/dd_register2")	
