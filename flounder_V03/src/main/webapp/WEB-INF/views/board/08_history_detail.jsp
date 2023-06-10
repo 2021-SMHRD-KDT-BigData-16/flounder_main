@@ -5,12 +5,6 @@
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <c:set var="cpath" value="${pageContext.request.contextPath}" />
-
-
-
-
-
-
 <head>
 <title>08 history detail</title>
 <meta charset="utf-8">

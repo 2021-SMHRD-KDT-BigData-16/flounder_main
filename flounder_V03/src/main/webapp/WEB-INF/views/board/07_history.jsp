@@ -83,7 +83,7 @@ $(document).ready(function () {
 	align-items: center;
 	width: 90%;
 	margin: 0 auto;
-	background-color: #f1f1f1;
+	background-color: #white;
 	padding: 10px;
 	border: 1px solid #5AD5C8;
 }
@@ -165,12 +165,12 @@ table.table-bordered tbody tr {
 						style="text-align: center; margin-bottom: 10px;">
 						<strong>나의 질병 히스토리</strong>
 					</h5>
-					<div style="padding: 20px;" class="d-flex flex-column align-items-center">
+					<div style="padding: 20px; " class="d-flex flex-column align-items-center">
 						<c:forEach var="vo" items="${list_detect}">
 							<div class="col-lg-6 col-md-6 col-sm-12 mb-4">
 								<div class="card2">
 									<div class="card-img-container"
-										style="width: 100%; height: 200px; overflow: hidden;">
+										style="width: 100%; height: 100%; overflow: hidden;">
 										<a class="move" href="${vo.dd_id}">
 											<img alt="이미지"
 												src="${cpath}/resources/${vo.org_img}"
@@ -179,8 +179,9 @@ table.table-bordered tbody tr {
 										</a>
 									</div>
 									<div class="content">
-										<div class="title">${vo.dd_comment}</div>
+									<br/>
 										<div class="name">${vo.m_name}</div>
+										<div class="title">${vo.dd_comment}</div>
 										<div class="date">
 											<fmt:formatDate value="${vo.dd_date}"
 												pattern="yyyy-MM-dd HH:mm:ss" />

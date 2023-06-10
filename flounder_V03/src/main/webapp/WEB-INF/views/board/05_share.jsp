@@ -91,7 +91,7 @@ $(document).ready(() => {
 								<div class="col-lg-6 col-md-6 col-sm-12 mb-4">
 									<div class="card h-100" style="padding: 20px;">
 										<div class="card-img-container"
-											style="width: 100%; height: 200px; overflow: hidden;">
+											style="width: 100%; height: 400px; overflow: hidden;">
 											<a class="move" href="${vo.c_id}"> <img
 												src="${cpath}/resources${vo.img_path}" class="card-img-top"
 												alt="이미지"
