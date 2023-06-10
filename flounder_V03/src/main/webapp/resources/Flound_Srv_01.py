@@ -166,7 +166,8 @@ def detect_dis():
     dis_name=dict_dis[cls_name[0][0:2]]
 
     logger.debug(f'pred_img : {predict_file_name}, org_img={save_file_name}')
-    return redirect(f"http://220.80.152.25:8081/flounder_V02/detect_reg?pred_image={predict_file_name}&org_image={save_file_name}&dis_name={dis_name}")
+    return redirect(f"http://121.179.7.40:8081/flounder_V03/detect_reg?pred_image={predict_file_name}&org_image={save_file_name}&dis_name={dis_name}")
+    # return redirect(f"http://220.80.152.25:8081/flounder_V02/detect_reg?pred_image={predict_file_name}&org_image={save_file_name}&dis_name={dis_name}")
     # return redirect(f"http://121.179.7.40:8081/flounder_V02/detect_reg?pred_img={predict_file_name}&org_img={org_file_name}")
     # return redirect(f"http://121.179.7.40:8081/flounder_V02/detect_reg?pred_file={predict_file_name}&org_file={org_file_name}")
 

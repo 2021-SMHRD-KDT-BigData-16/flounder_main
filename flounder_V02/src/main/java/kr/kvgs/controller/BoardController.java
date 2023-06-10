@@ -301,39 +301,6 @@ public class BoardController {
         logger.info("BoardController dd_register2 dd_email : {}, dd_comment : {}", vo.getDd_email(), vo.getDd_comment());
         logger.info("****** dd_register2 dd_email : {}, dd_comment : {}", vo.getDt_img(), vo.getOrg_img());
 		int iRet = mapper.dd_insert(vo);
-    	
-//        String fileName = file.getOriginalFilename(); 
-//        long fileSize = file.getSize();
-//        
-//        String imagePath = request.getServletContext().getRealPath("/");
-//		String fileExt = fileName.substring(fileName.lastIndexOf("."), fileName.length());
-//		
-//		UUID uuid = UUID.randomUUID();
-//		String uniqueName = uuid.toString();
-//		
-//        String fileFullPath = imagePath + "resources\\DATA\\DetectImg\\" + uniqueName + fileExt;
-//        String fileSaveDB = "/DATA/DetectImg/" + uniqueName + fileExt;
-//		
-//		logger.info("BoardController dd_register fileFullPath : {}, fileSaveDB : {}", fileFullPath, fileSaveDB);
-//
-//		File UploadFolder = new File(imagePath);
-//        try{
-//    		if( !UploadFolder.exists() ) {
-//    			logger.info("BoardController getFile imagePath : {} not exist", imagePath);
-//    			UploadFolder.mkdir();
-//    		}
-//        
-//			logger.info("BoardController getFile FullPath : {}, FileSize : {}", fileFullPath, fileSize);
-//	        File destination = new File(fileFullPath);
-//	        file.transferTo(destination);
-//        }catch (Exception e){
-//        	logger.info("에러 : " + e.getMessage());
-//        }finally {
-//        	
-//        }
-//
-//        vo.setOrg_img(fileSaveDB);
-//		int iRet = mapper.dd_insert(vo);
         
         return "redirect:/history";
     }	
