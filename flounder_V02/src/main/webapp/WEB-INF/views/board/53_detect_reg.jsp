@@ -172,8 +172,7 @@
                      
                      
                   </div>
-                  <a class="nav-link" href="#" onClick="location.href='./51'">파이썬
-                     플라스크 연동 테스트</a> <br />
+                  
                </div>
             </div>
          </div>
