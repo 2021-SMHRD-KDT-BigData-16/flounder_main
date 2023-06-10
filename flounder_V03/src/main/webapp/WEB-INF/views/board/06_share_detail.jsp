@@ -180,8 +180,17 @@ tr:hover { background-color: #F5F5F5; }
 																<div>
 																	<strong>${reply.r_name}</strong> 
 																</div>
-																<p>${reply.reply}</p>
-																<span><fmt:formatDate value="${reply.r_date}" pattern="yyyy-MM-dd HH:mm:ss" /></span>
+																<p>${reply.reply}<button data-btn="modify" class="btn btn-sm btn-primary">
+										수정
+									</button>
+									<button data-btn="remove" class="btn btn-sm btn-primary">
+										삭제
+									</button>
+							</p>
+															
+									
+																
+																<span><fmt:formatDate value="${reply.r_date}" pattern="yyyy.MM.dd HH:mm" /></span>
 															</li>
 														</c:forEach>
 													</ul>
