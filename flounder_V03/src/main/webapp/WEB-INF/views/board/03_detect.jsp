@@ -142,8 +142,10 @@
                      
                      <div class="row justify-content-center">
                         <div class="col-lg-8">
-                        
+<!--                         
                               <form action="http://121.179.7.40:5000/detect_dis" method="post" enctype="multipart/form-data">
+ -->                              
+                              <form action="http://211.223.106.39:5000/detect_dis" method="post" enctype="multipart/form-data">
                               <input type="hidden" name="dd_email" value="${mvo.m_email}" />
                               <div class="form-group">
                                  <label>질병진단 :</label> <br/>
