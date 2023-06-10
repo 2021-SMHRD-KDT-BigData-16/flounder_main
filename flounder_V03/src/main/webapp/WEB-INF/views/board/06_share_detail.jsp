@@ -43,6 +43,19 @@
 	background-color: transparent;
 	color: #5AD5C8;
 }
+table {
+     border-collapse: collapse;
+     width: 100%;
+}
+
+th, td {
+     padding: 10px;
+     border-bottom: 1px solid #CD5C5C;
+}
+
+/* 커서 갖다대면 색깔이 바뀌며 직관적으로 표현한다 */
+tr:hover { background-color: #F5F5F5; }
+
 </style>
 
 <script type="text/javascript">
@@ -139,26 +152,48 @@
 
 
 
-							<c:if test="${!empty mvo}">
-								<div class="card-body"
-									style="margin: 10px; display: flex; align-items: center;">
-									<form action="${cpath}/reply" method="post"
-										style="flex: 1; width: 100%;">
-										<div class="form-group"
-											style="display: flex; flex-direction: row;">
-											<label for="replyText"
-												style="flex: 0 0 auto; margin-right: 10px;"></label>
-											<textarea class="form-control" id="reply" name="reply"
-												rows="1" style="flex: 1; resize: none; height: auto;"></textarea>
+								<c:if test="${!empty mvo}">
+									<div class="card-body"
+										style="margin: 10px; display: flex; align-items: center;">
+										<form action="${cpath}/reply" method="post"
+											style="flex: 1; width: 100%;">
+											<div class="form-group"
+												style="display: flex; flex-direction: row;">
+												<label for="replyText"
+													style="flex: 0 0 auto; margin-right: 10px;"></label>
+												<textarea class="form-control" id="reply" name="reply"
+													rows="1" style="flex: 1; resize: none; height: auto;"></textarea>
 
-											<input type="hidden" name="c_id" value="${share_detail.c_id}">
-											<input type="hidden" name="r_email" value="${mvo.m_email}">
-											<button type="submit" class="btn btn-primary"
-												style="margin-left: 10px; align-self: flex-end;">입력</button>
-										</div>
-									</form>
-								</div>
-							</c:if>
+												<input type="hidden" name="c_id"
+													value="${share_detail.c_id}"> <input type="hidden"
+													name="r_email" value="${mvo.m_email}">
+												<button type="submit" class="btn btn-primary"
+													style="margin-left: 10px; align-self: flex-end;">입력</button>
+												<br />
+												
+
+											</div>
+											<c:if test="${not empty reply}">
+												
+													<ul class="list-group" style="text-align:left">
+														<c:forEach var="reply" items="${reply}">
+														
+															<li class="list-group-item">
+																<div>
+																	<strong>${reply.r_name}</strong> 
+																</div>
+																<p>${reply.reply}</p>
+																<span>${reply.r_date}</span>
+															</li>
+														</c:forEach>
+														
+													</ul>
+
+
+												</c:if>
+										</form>
+									</div>
+								</c:if>
 
 
 							</div>
@@ -183,23 +218,7 @@
 
 
 	<!-- 답글 목록 -->
-	<c:if test="${not empty reply}">
-		<div class="card mt-4">
-			<h5 class="card-header">답글 목록</h5>
-			<div class="card-body">
-				<ul class="list-group">
-					<c:forEach var="reply" items="${reply}">
-						<li class="list-group-item">
-							<div>
-								<strong>${reply.r_name}</strong> <span>${reply.r_date}</span>
-							</div>
-							<p>${reply.reply}</p>
-						</li>
-					</c:forEach>
-				</ul>
-			</div>
-		</div>
-	</c:if>
+
 
 	<!--  
 <c:choose>
