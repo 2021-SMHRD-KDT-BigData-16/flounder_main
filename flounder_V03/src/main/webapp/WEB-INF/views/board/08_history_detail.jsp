@@ -130,7 +130,7 @@
 						</div>
 						<br />
 						<div class="row">
-							<div class="col-md-6">
+							<div class="col-md-12">
 								<div class="card2">
 								  <div style="width: 50%;">
                                     <table class="table_contents">
@@ -150,27 +150,9 @@
 								  </div>
 								</div>
 							</div>
-							<div class="col-md-6">
-								<div class="card2">
-								  <div style="width: 50%;">
-                                    <table class="table_contents">
-										<!-- 두 번째 내용 -->
-										<tr>
-											<td>${history_detail.m_name}</td>
-										</tr>
-										<tr>
-											<td>${fn:replace(history_detail.dd_comment, newLineChar, "<br/>")}</td>
-												<!-- vo.content에서 \n를 찾아 <br>로 바꿉니다. -->
-										</tr>
-										<tr>
-											<td><fmt:formatDate value="${history_detail.dd_date}"
-													pattern="yyyy-MM-dd HH:mm:ss" /></td>
-										</tr>
-									</table>
+							
 								  </div>
-								</div>
-							</div>
-						</div>
+							
 						<br />
 						<div class="text-center mt-4">
 							<form id="frm" action="${cpath}/history" method="GET" style="display: inline;">
