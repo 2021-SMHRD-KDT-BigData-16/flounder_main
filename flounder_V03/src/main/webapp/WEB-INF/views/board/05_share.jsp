@@ -49,7 +49,7 @@
 	width: 60%;
 }
 
-@media ( max-width : 576px) {
+@media (max-width: 576px) {
 	.left-section .feed-card {
 		width: 100%;
 	}
@@ -57,22 +57,20 @@
 </style>
 
 <script type="text/javascript">
-
-      $(document).ready(()=>{
-         var pageForm = $("#pageForm");
-         // 상세보기로 이동
-         $(".move").on("click", function(e){ 
-            e.preventDefault(); // a tag의 고유한 기능을 막는 방법
-            var c_id = $(this).attr("href");
-            var tag = "<input type='hidden' name='c_id' value='"+c_id+"'>";
-            pageForm.append(tag);
-            pageForm.attr("action", "${cpath}/share_detail");
-            pageForm.attr("method", "post");
-            pageForm.submit(); // 폼을 전송
-            });
-         });
-      </script>
-
+$(document).ready(() => {
+	var pageForm = $("#pageForm");
+	// 상세보기로 이동
+	$(".move").on("click", function (e) {
+		e.preventDefault(); // a tag의 고유한 기능을 막는 방법
+		var c_id = $(this).attr("href");
+		var tag = "<input type='hidden' name='c_id' value='" + c_id + "'>";
+		pageForm.append(tag);
+		pageForm.attr("action", "${cpath}/share_detail");
+		pageForm.attr("method", "post");
+		pageForm.submit(); // 폼을 전송
+	});
+});
+</script>
 
 </head>
 <body>
@@ -82,28 +80,27 @@
 			<div class="row">
 				<div class="col-lg-9">
 					<div class="feed-box">
-					<h5 class="header"
-								style="text-align: center; margin-bottom: 10px;">
-								<br />
-								<strong>정보 공유</strong>
-							</h5>
+						<h5 class="header"
+							style="text-align: center; margin-bottom: 10px;">
+							<br />
+							<strong>정보 공유</strong>
+						</h5>
 						<div style="padding: 20px;"
 							class="d-flex flex-column align-items-center">
 							<c:forEach var="vo" items="${list_comm}">
-								<div class="col-5 mb-4">
-									<div class="card" style="padding: 20px;">
+								<div class="col-lg-6 col-md-6 col-sm-12 mb-4">
+									<div class="card h-100" style="padding: 20px;">
 										<div class="card-img-container"
-											style="width: 490px; height: 300px; overflow: hidden;">
+											style="width: 100%; height: 200px; overflow: hidden;">
 											<a class="move" href="${vo.c_id}"> <img
 												src="${cpath}/resources${vo.img_path}" class="card-img-top"
 												alt="이미지"
 												style="width: 100%; height: 100%; object-fit: cover;">
 											</a>
-
 										</div>
 										<br />
-										<h5 class="card-text" 
-										style ="font-size : 14px;"> ${vo.m_name}</h5>
+										<h5 class="card-text"
+											style="font-size: 14px;">${vo.m_name}</h5>
 										<p class="card-title">${vo.title}</p>
 										<p class="card-text">
 											<small class="text-muted"><fmt:formatDate
@@ -114,8 +111,6 @@
 							</c:forEach>
 
 							<form id="pageForm"></form>
-
-
 						</div>
 					</div>
 				</div>
@@ -135,6 +130,4 @@
 		</div>
 	</div>
 </body>
-
-
 </html>
