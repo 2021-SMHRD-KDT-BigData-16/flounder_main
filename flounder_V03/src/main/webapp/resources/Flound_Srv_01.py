@@ -130,8 +130,6 @@ def detect_dis():
     msg = 'start'
     logger.debug(f'detect_dis : {msg}')
     file = request.files['org_image']
-    # dd_email = request.form['dd_email']
-    # logger.debug(f'dd_email : {dd_email}')
 
     org_file_name = secure_filename(file.filename)
     save_file_name = 'org_' + org_file_name
@@ -155,92 +153,18 @@ def detect_dis():
         cls_name.append(names[int(c)])
 
     logger.debug(f'predict_file_name : {predict_file_name}')
-    encoded_img = get_response_image(predict_file_name)
-
     response = {'Status': 'Success', 'detect_sym_code': cls_name, 'pred_file_name': predict_file_name}
     logger.debug(f'response : {response}')
-    # return jsonify(response)
-
     dict_dis = {'PO':'정상', 'VI': '비브리오증', 'SP': '연쇄구균병', 'MA': '스쿠티카병'}
 
-    dis_name=dict_dis[cls_name[0][0:2]]
+    if len(cls_name) > 0:
+        dis_name=dict_dis[cls_name[0][0:2]]
+    else:
+        dis_name = '정상'
 
     logger.debug(f'pred_img : {predict_file_name}, org_img={save_file_name}')
     return redirect(f"http://121.179.7.40:8081/flounder_V03/detect_reg?pred_image={predict_file_name}&org_image={save_file_name}&dis_name={dis_name}")
-    # return redirect(f"http://220.80.152.25:8081/flounder_V02/detect_reg?pred_image={predict_file_name}&org_image={save_file_name}&dis_name={dis_name}")
-    # return redirect(f"http://121.179.7.40:8081/flounder_V02/detect_reg?pred_img={predict_file_name}&org_img={org_file_name}")
-    # return redirect(f"http://121.179.7.40:8081/flounder_V02/detect_reg?pred_file={predict_file_name}&org_file={org_file_name}")
-
-
-    # if request.method == 'POST':
-    #     user = request.form['nm']
-    #     return redirect(url_for('success', name=user))
-    # else:
-    #     user = request.args.get('nm')
-    #     return redirect(url_for('success', name=user))
-
-    # response = {'Status': 'Success', 'detect_sym_code': cls_name, 'ImageBytes': predict_file_name}
-    # logger.debug(f'response : {response}')
-    # return jsonify(response)
-    # field = {'appType': 'P', 'custNum': cls_name}
-    # res = requests.post(url=_url, headers=_headers, data=field.encode("utf8"))
-
-
-# @app.route(‘/handle_form’, methods=[‘POST’])
-# def handle_form():
-# print(“Posted file: {}”.format(request.files[‘file’]))
-# file = request.files[‘file’]
-# files = {‘file’: file.read()}
-# r = requests.post(“http://127.0.0.1:8000/upload/”, files=files)
-# if r.ok:
-#     return "File uploaded!"
-# else:
-#     return "Error uploading file!"
-
-# import requests
-#
-# _url = "https://mydomain.com/some-api/sample"
-# _headers = {
-# 	"Content-Type": "application/json",
-# 	"x-client-key": "my-sample-key",
-# 	... }
-# _data = '{\"data1\":\"value1\",\"data2\":{\"data21\":\"value21\"},\"data3\":[31,\"value32\"]}'
-#
-# res = requests.post(url=_url, headers=_headers, data=_data.encode("utf8"))
-#
-# from requests_toolbelt import MultipartEncoder
-# import requests
-# import json
-#
-#
-# def post(url, field_data):
-#     m = MultipartEncoder(fields=field_data)
-#     headers = {'Content-Type': m.content_type}
-#     res = requests.post(url, headers=headers, data=m)
-#     return res.status_code, res.json()
-#
-#
-# def get_login_info(cust_num, id, pw):
-#     field = {'appType': 'P', 'custNum': cust_num, 'userID': id, 'userPW': pw}
-#     return post('https://test.test.test/Account/Login', field)
-
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
 
-
-
-
-
-
-# dict_dis = {'PO':'정상', 'VI': '비브리오증', 'SP': '연쇄구균병', 'MA': '스쿠티카병'}
-#
-# print(dict_dis)
-#
-# test = "MADAO"
-#
-# print(test)
-#
-# print(test[0:2])
-#
-# dict_dis[test[0:2]]

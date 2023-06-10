@@ -129,6 +129,8 @@
    <div class="card-body">
       <div class="row">
          <div class="col-lg-9">
+            
+            
             <div class="card">
                <div class="feed-section">
                   <br />
@@ -140,9 +142,7 @@
                      
                      <div class="row justify-content-center">
                         <div class="col-lg-8">
-<!--                         
-                              <form action="http://220.80.152.25:5000/detect_dis" method="post" enctype="multipart/form-data">	
- -->                              	
+                        
                               <form action="http://121.179.7.40:5000/detect_dis" method="post" enctype="multipart/form-data">
                               <input type="hidden" name="dd_email" value="${mvo.m_email}" />
                               <div class="form-group">
@@ -159,40 +159,12 @@
                            </form>
                         </div>
                      </div>
-
-                     <div class="row justify-content-center">
-                        <div class="col-lg-8">
-                           <form action="${cpath}/dd_register" method="post"
-                              enctype="multipart/form-data">
-                              <input type="hidden" name="dd_email" value="${mvo.m_email}" />
-                              <div class="form-group">
-                                 <label>내용:</label>
-                                 <textarea rows="5" name="dd_comment" id="content"
-                                    class="form-control"></textarea>
-                              </div>
-                              <div class="form-group">
-                                 <label>업로드 이미지:</label> <br/>
-                                 <input type="file" name="file" id="file" accept="image/*" onchange="readImage(this);" /> 
-                              </div>
-                              <div class="form-group">
-                                 <img id="preview_img" height=135px />
-                              </div>
-                              <div class="form-group">
-                                 <button type="submit" class="btn btn-sm btn-primary"
-                                    style="width: 45%; font-size: 1em;">등록</button>&nbsp&nbsp&nbsp&nbsp
-                                 <button type="reset" class="btn btn-sm btn-primary"
-                                    style="width: 45%; font-size: 1em;">취소</button>
-                              </div>
-                           </form>
-                        </div>
-                     </div>
-                     
                      
                   </div>
-                  <a class="nav-link" href="#" onClick="location.href='./51'">파이썬
-                     플라스크 연동 테스트</a> <br />
                </div>
             </div>
+            
+            
          </div>
          <div class="col-lg-3">
             <jsp:include page="97_right.jsp" />
