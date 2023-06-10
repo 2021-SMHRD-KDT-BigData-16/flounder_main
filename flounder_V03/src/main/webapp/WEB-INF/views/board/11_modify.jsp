@@ -67,11 +67,11 @@
 	}
 </script>
 
- <script>
-        function goBack() {
-            window.history.back(); // 이전 페이지로 이동
-        }
-    </script>
+<script>
+	function goBack() {
+		window.history.back(); // 이전 페이지로 이동
+	}
+</script>
 
 </head>
 <body>
@@ -90,17 +90,17 @@
 									enctype="multipart/form-data">
 									<div class="form-group">
 										<div class="form-group">
-											<label>업로드 이미지:</label> 
+											<label>업로드 이미지:</label>
 											<br/>
 											<br/>
 											<input type="file" name="file" id="file" accept="image/*" onchange="readImage(this);" />
 											<br/>
 											<br/>
-											<img id="preview_img" height=200px src="${cpath}/resources${mo.img_path}" />
+											<img id="preview_img" height="200px" src="${cpath}/resources${mo.img_path}" />
 										</div>
 									</div>
 									<div class="form-group">
-										<label>제목:</label> 
+										<label>제목:</label>
 										<input type="text" name="title" value="${mo.title}" class="form-control" />
 									</div>
 									<div class="form-group">
@@ -141,4 +141,3 @@
 	</script>
 </body>
 </html>
-
