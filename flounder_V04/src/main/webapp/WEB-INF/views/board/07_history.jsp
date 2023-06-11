@@ -98,9 +98,10 @@ $(document).ready(function () {
 }
 
 .card2 img {
-	width: 95%;
+	width: 100%;
 	height: auto;
 	margin: 0 auto;
+	object-fit: cover;
 }
 
 table.table-bordered {
@@ -174,8 +175,7 @@ table.table-bordered tbody tr {
 										<a class="move" href="${vo.dd_id}">
 											<img alt="이미지"
 												src="${cpath}/resources/${vo.org_img}"
-												class="card-img-top"
-												style="width: 100%; height: 100%; object-fit: cover;">
+												class="card-img-top">
 										</a>
 									</div>
 									<div class="content">

@@ -108,7 +108,7 @@ tr:hover {
 							<tr>
 								<div style="display: flex; justify-content: center;">
 
-									<td><img alt="이미지" height=400px; width=400px;
+									<td><img alt="이미지" height=230px; width=200px;
 										src="${cpath}/resources${share_detail.img_path}"></td>
 								</div>
 							</tr>

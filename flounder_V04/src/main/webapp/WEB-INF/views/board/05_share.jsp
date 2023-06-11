@@ -54,6 +54,19 @@
 		width: 100%;
 	}
 }
+
+/* 이미지에 맞춰서 피드박스 크기 조정 */
+.feed-card .card-img-container {
+	width: 100%;
+	height: 200px;
+	overflow: hidden;
+}
+
+.feed-card .card-img-container img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
 </style>
 
 <script type="text/javascript">
@@ -89,13 +102,11 @@ $(document).ready(() => {
 							class="d-flex flex-column align-items-center">
 							<c:forEach var="vo" items="${list_comm}">
 								<div class="col-lg-6 col-md-6 col-sm-12 mb-4">
-									<div class="card h-100" style="padding: 20px;">
-										<div class="card-img-container"
-											style="width: 100%; height: 400px; overflow: hidden;">
+									<div class="card h-100 feed-card" style="padding: 20px;">
+										<div class="card-img-container">
 											<a class="move" href="${vo.c_id}"> <img
 												src="${cpath}/resources${vo.img_path}" class="card-img-top"
-												alt="이미지"
-												style="width: 100%; height: 100%; object-fit: cover;">
+												alt="이미지">
 											</a>
 										</div>
 										<br />

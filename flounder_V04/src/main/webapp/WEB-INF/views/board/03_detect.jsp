@@ -46,7 +46,7 @@
 .inner-box {
    border: 1px solid #5AD5C8;
    border-radius: 10px;
-   padding: 50px;
+   padding: 10px;
    margin: 10px;
    display: flex;
    flex-direction: column;
@@ -129,44 +129,31 @@
    <div class="card-body">
       <div class="row">
          <div class="col-lg-9">
-            
-            
             <div class="card">
-               <div class="feed-section">
-                  <br />
-                  <div class="inner-box">
-                     <h5 class="header"
-                        style="text-align: center; margin-bottom: 10px;">
-                        <strong>질병진단 및 결과등록</strong>
-                     </h5>
-                     
-                     <div class="row justify-content-center">
-                        <div class="col-lg-8">
-<!--                         
-                              <form action="http://121.179.7.40:5000/detect_dis" method="post" enctype="multipart/form-data">
- -->                              
-                              <form action="http://211.223.106.39:5000/detect_dis" method="post" enctype="multipart/form-data">
-                              <input type="hidden" name="dd_email" value="${mvo.m_email}" />
-                              <div class="form-group">
-                                 <label>질병진단 :</label> <br/>
-                                 <input type="file" name="org_image" id="file" accept="image/*" onchange="readDetectImage(this);" /> 
-                              </div>
-                              <div class="form-group">
-                                 <img id="detect_img" height=135px />
-                              </div>
-                              <div class="form-group">
-                                 <button type="submit" class="btn btn-sm btn-primary"
-                                    style="width: 45%; font-size: 1em;">진단하기</button>&nbsp&nbsp&nbsp&nbsp
-                              </div>
-                           </form>
-                        </div>
+               <br />
+               <div class="inner-box">
+                  <h5 class="header" style="text-align: center; margin-bottom: 10px;">
+                     <strong>질병진단 및 결과등록</strong>
+                  </h5>
+                  <div class="row justify-content-center">
+                     <div class="col-lg-8 text-center">
+                        <form action="http://211.223.106.39:5000/detect_dis" method="post" enctype="multipart/form-data">
+                           <input type="hidden" name="dd_email" value="${mvo.m_email}" />
+                           <div class="form-group">
+							<label for="media">미디어 (이미지 또는 동영상)</label>
+							<input type="file" name="file" class="form-control-file" id="img_path" name="img_path" accept="image/*,video/*" required>
+						</div>
+                           <div class="form-group">
+                              <img id="detect_img" height="135px" />
+                           </div>
+                           <div class="form-group">
+                              <button type="submit" class="btn btn-sm btn-primary" style="width: 45%; font-size: 1em;">진단하기</button>
+                           </div>
+                        </form>
                      </div>
-                     
                   </div>
                </div>
             </div>
-            
-            
          </div>
          <div class="col-lg-3">
             <jsp:include page="97_right.jsp" />
@@ -174,4 +161,5 @@
       </div>
    </div>
 </body>
+
 </html>
