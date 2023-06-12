@@ -156,7 +156,7 @@
                                  <label>내용:</label>
                                  <textarea rows="5" name="dd_comment" id="content"
                                     class="form-control">
-                                    
+                                    진단된 질병 : ${dis_name}
                                  </textarea>
                               </div>
                               
