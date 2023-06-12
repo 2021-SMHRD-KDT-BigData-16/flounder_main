@@ -21,7 +21,7 @@
 				D:/Git/SpringStudy/BamentumRE_01/logs/bamentum.log 
 				C:\TeamGit\flounder_01\flounder_01
 			-->
-				C:/TeamGit/flounder_01/flounder_01/logs/flounder.log 
+				C:/logs/flounder.log 
 			
 		</file>
 		<rollingPolicy
@@ -30,11 +30,9 @@
 				or else the rollover logs are placed in the working directory. -->
 			<fileNamePattern>
 				<!-- 
-					C:/TeamGit/Bamen_Sub/bamentum_02/logs/bamentum_%d{yyyy-MM-dd}.%i.log
-					D:/Git/WebProject/bamentum_02/logs/bamentum_%d{yyyy-MM-dd}.%i.log
-					D:/Git/SpringStudy/BamentumRE_01/logs/bamentum_%d{yyyy-MM-dd}.%i.log
-				 -->
 					C:/TeamGit/flounder_01/flounder_01/logs/flounder_%d{yyyy-MM-dd}.%i.log 
+				 -->
+					C:/logs/flounder_%d{yyyy-MM-dd}.%i.log 
 				
 			</fileNamePattern>
 
