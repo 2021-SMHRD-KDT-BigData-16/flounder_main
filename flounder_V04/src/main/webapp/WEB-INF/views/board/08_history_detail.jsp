@@ -73,6 +73,18 @@
 }
   .table {
 }
+ .btn-primary.rounded-circle:hover {
+        background-color: transparent;
+        border-color: transparent;
+    }
+
+    .btn-primary.rounded-circle {
+        background-color: transparent;
+        padding: 0.2rem;
+        border-color: transparent;
+        box-shadow: none;
+        color: black;
+    }
 </style>
 <script type="text/javascript">
 	$(document).ready(function() {
@@ -108,6 +120,15 @@
 				<br />
 				<div class="card-body">
 					<div class="container">
+								<div class="text-center mt-4">
+    <form id="frm" action="${cpath}/history" method="GET" style="display: flex; justify-content: flex-start; align-items: center;">
+        <button data-btn="list" class="btn btn-sm btn-primary rounded-circle">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left-short" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M11 4H3.707l4.147-4.146a.5.5 0 1 0-.708-.708L2.146 4.5a.5.5 0 0 0 0 .708l4.293 4.293a.5.5 0 1 0 .708-.708L3.707 5H11a.5.5 0 0 0 0-1z"/>
+            </svg>
+        </button>
+    </form>
+</div>
 						<br />
 						<div class="row">
 
@@ -156,7 +177,7 @@
 						<br />
 						<div class="text-center mt-4">
 							<form id="frm" action="${cpath}/history" method="GET" style="display: inline;">
-								<button data-btn="list" class="btn btn-sm btn-primary">목록</button>
+								
 							</form>
 							<span> </span> 				
 							<form id="frm" action="${cpath}/history_remove" method="POST" style="display: inline;">
