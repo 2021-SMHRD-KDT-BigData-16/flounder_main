@@ -58,6 +58,18 @@ th, td {
 tr:hover {
 	background-color: #F5F5F5;
 }
+  .btn-primary.rounded-circle:hover {
+        background-color: transparent;
+        border-color: transparent;
+    }
+
+    .btn-primary.rounded-circle {
+        background-color: transparent;
+        padding: 0.2rem;
+        border-color: transparent;
+        box-shadow: none;
+        color: black;
+    }
 </style>
 
 <script type="text/javascript">
@@ -100,12 +112,19 @@ tr:hover {
 					<div class="center-card">
 						<div class="card" style="margin: 20px;">
 
-							<h5 class="card-title"
-								style="display: flex; justify-content: center; align-items: center;">
-								<strong>게시물 상세</strong>
-							</h5>
+<h5 class="card-title"
+     style="display: flex; justify-content: flex-start; align-items: center;">
+    <button data-btn="list" class="btn btn-sm btn-primary rounded-circle mr-1">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left-short" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M11 4H3.707l4.147-4.146a.5.5 0 1 0-.708-.708L2.146 4.5a.5.5 0 0 0 0 .708l4.293 4.293a.5.5 0 1 0 .708-.708L3.707 5H11a.5.5 0 0 0 0-1z"/>
+        </svg>
+    </button>
+</h5>
 							<br />
-							<tr>
+   <h4 class="card-title"
+     style="display: flex; justify-content: center; align-items: center;">
+    <strong>게시물 상세</strong>
+</h4>
 								<div style="display: flex; justify-content: center;">
 
 									<td><img alt="이미지" height=400px; width=400px;
@@ -137,7 +156,7 @@ tr:hover {
 							</table>
 
 							<div class="text-center mt-4">
-								<button data-btn="list" class="btn btn-sm btn-primary">목록</button>
+							
 
 
 								<!-- 로그인한 아이디와 게시물의 아이디가 같을경우 -->
