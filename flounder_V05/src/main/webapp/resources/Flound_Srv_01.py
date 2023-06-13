@@ -163,7 +163,8 @@ def detect_dis():
         dis_name = '정상'
 
     logger.debug(f'pred_img : {predict_file_name}, org_img={save_file_name}')
-    return redirect(f"http://121.179.7.40:8081/flounder_V03/detect_reg?pred_image={predict_file_name}&org_image={save_file_name}&dis_name={dis_name}")
+    # return redirect(f"http://121.179.7.40:8081/flounder_V03/detect_reg?pred_image={predict_file_name}&org_image={save_file_name}&dis_name={dis_name}")
+    return redirect(f"http://211.223.106.39:8081/flounder_V05/detect_reg?pred_image={predict_file_name}&org_image={save_file_name}&dis_name={dis_name}")
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
