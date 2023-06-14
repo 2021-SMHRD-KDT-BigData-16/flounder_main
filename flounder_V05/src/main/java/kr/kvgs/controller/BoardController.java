@@ -127,7 +127,6 @@ public class BoardController {
 		mapper.remove(c_id);
 		return "redirect:/community"; //
 	}
-	
 
 	@GetMapping("/modify")
 	public String modify(int c_id, Model model) {
