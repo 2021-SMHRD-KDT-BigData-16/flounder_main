@@ -300,9 +300,6 @@ public class BoardController {
 		model.addAttribute("pred_image", pred_image);		
     	return "board/53_detect_reg";
 	}
-	
-	
-	
 
     // 파일전송 요청을 처리하기 위한 컨트롤러
     @RequestMapping("/dd_register2")	
@@ -313,7 +310,5 @@ public class BoardController {
         
         return "redirect:/history";
     }	
-    
-	
 	
 }
